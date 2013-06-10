@@ -1,0 +1,577 @@
+/*
+Theme Name: Land Liberty_v1
+Theme URI: http://www.landliberty.or.kr
+Description: 토지+자유 연구소 사이트 전용 테마.
+Author: 조우진(jwj0831@gmail.com)
+Author URI: http://www.notforme.kr//
+Version: 1.0
+Tags: black, blue, white, two-columns, fixed-width, custom-header, custom-background, threaded-comments, sticky-post, translation-ready, microformats, rtl-language-support, editor-style, custom-menu (optional)
+
+*/
+
+/*
+ *  Global CSS
+ */
+
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+article, aside, hgroup, header, footer, figcaption, nav, section { display: block; }
+
+.clear { clear: both; }
+
+* {
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	font-family: "Nanum Gothic", "sans-serif";
+}
+
+a {
+	text-decoration: none;
+	color: #c3c3c3;
+}
+
+body { 
+	margin:0 auto; 
+}
+
+/* =WordPress Core
+-------------------------------------------------------------- */
+.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.aligncenter,
+div.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+}
+
+.alignright {
+    float:right;
+    margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+}
+
+a img.alignright {
+    float: right;
+    margin: 5px 0 20px 20px;
+}
+
+a img.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.wp-caption {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    max-width: 96%; /* Image does not overflow the content area */
+    padding: 5px 3px 10px;
+    text-align: center;
+}
+
+.wp-caption.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignleft {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignright {
+    margin: 5px 0 20px 20px;
+}
+
+.wp-caption img {
+    border: 0 none;
+    height: auto;
+    margin: 0;
+    max-width: 98.5%;
+    padding: 0;
+    width: auto;
+}
+
+.wp-caption p.wp-caption-text {
+    font-size: 11px;
+    line-height: 17px;
+    margin: 0;
+    padding: 0 4px 5px;
+}
+
+
+/*
+ *  Header Part CSS
+ */
+
+#head-container { 
+	width: 100%;
+}
+
+header {
+	width: 1000px;
+	height: 30px;
+	margin:0 auto; 
+	margin-top: 12px;
+	margin-bottom: 12px;
+	font-size: 11px;
+	color: #c3c3c3;
+}
+
+#top-bar{
+	float: right;
+}
+
+#bar {
+	display: inline;
+	position: relative;
+	top: -10px;
+}
+
+#login, #join  {
+	display: inline;
+	position: relative;
+	top: -10px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+#search {
+	display: inline-block;
+	margin-left: 10px;
+}
+
+form {
+	border: 2px solid #3A8AD4;
+	height: 26px;
+}
+
+#search-text {
+	position: relative;
+	top: -13px;
+	left: 2px;
+	height: 20px;
+}
+
+#search-btn {
+	position: relative;
+	top: -2px;
+}
+
+#logo {
+	display: inline-block;
+}
+
+#logo img { display:inline; }
+
+#menu {
+	width: 100%;
+	font-size: 0px;
+}
+
+#menu nav {
+	width: 1000px;
+	margin:0 auto; 
+}
+
+#menu nav ul {
+	position: relative;
+	top: 20px;
+	float: right;
+}
+
+#menu nav ul li {
+	list-style: none;
+	display: inline;
+}
+
+#menu nav ul li .menu_item {
+	font-size: 18px;
+	font-weight:bold;
+	color: #000;
+	margin-left: 53px;
+}
+
+#menu nav ul ul{ 
+	display: none; 
+	position: absolute;
+	opacity: 0;
+	-webkit-transition: opacity 2s;
+}
+
+#menu nav ul li:hover ul { 
+	display: block;
+	opacity: 1;
+}
+
+#menu nav ul ul a {
+	display: inline-block;
+	height: 33px;
+	font-size: 12px;
+	text-align: center; 
+}
+
+#menu nav ul ul a span {
+	margin-top: 10px;
+	display: block;
+}
+
+#menu nav ul #submenu1 a {
+	position:relative;
+	left: -80px;
+	width: 100px; 
+}
+
+#menu nav ul #submenu2 a {
+	position:relative;
+	left: 125px;
+	width: 100px; 
+
+}
+
+#menu nav ul #submenu3 a {
+	position:relative;
+	left: 240px;
+	width: 100px;  
+
+}
+
+#menu nav ul #submenu4 a {
+	position:relative;
+	left: 360px;
+	width: 100px; 
+}
+
+#menu nav ul #submenu5 a {
+	position:relative;
+	left: 440px;
+	width: 100px;
+}
+
+#menu nav ul #submenu6 a {
+	position:relative;
+	left: 620px;
+	width: 100px; 
+}
+
+#float_nav{
+	position: fixed;
+	left: 50%;
+	margin: 20px 0 0 510px;
+	font-size: 0px;
+}
+#float-hat {
+	height: 15px;	
+	width: 56px;
+	background: #39C5A9;
+}
+#float_nav li{
+	list-style: none;
+}
+
+
+/*
+ *  Footer Part CSS
+ */
+
+footer { 
+	width: 100%;
+	height: 130px;
+	position: absolute; 
+	border-top: 1px solid #cfcfcf;
+	background-image: url('images/bg.gif');
+	background-repeat: repeat;
+}
+
+footer #footer_line {
+	width: 1000px;
+	height: 100px;
+	margin-top: 30px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+footer #footer_line #tail-logo{
+	display: inline-block;
+	margin-left: 60px;
+	margin-right: 30px; 
+}
+
+footer #footer_line .org_info  {
+	display: inline-block;
+	font-size: 12px;
+	color: #777777;
+	line-height: 20px;
+	top: -5px;
+	position: relative;
+}
+
+footer #footer_line .org_info address { font-style: normal; }
+
+
+/*
+ * Front Page CSS
+ */
+
+#main {
+	width: 100%;
+	height: 1234px;
+	position: relative;
+	background-image: url('images/bg.gif');
+	background-repeat: repeat;
+	margin-top: 25px;
+	border-top: 2px solid #3A8AD4;
+}
+
+
+#main_top {
+	width: 1000px;
+	height: 302px;
+	margin:0 auto;
+	font-size: 0px;
+}
+
+#main_top #top_col1{
+	display: inline-block;
+	width: 664px;
+	height: 300px;
+	border: 1px solid #cccccc;
+}
+
+#main_top #slide{
+	display: inline-block;
+	width: 664px;
+	height: 300px;
+	float: left; 
+	background-color: #F05626;
+}
+
+#main_top #top_col2{
+	display: inline-block;
+	width: 332px;
+	height: 300px;
+	border: 1px solid #cccccc;
+}
+
+#main_top #column{
+	display: inline-block;
+	width: 332px;
+	height: 202px;
+	float: left;
+	background-color: #FFFFFF;
+	border-bottom: 1px solid #cccccc;
+}
+
+#main_top .column-title-box{
+	height: 53px;
+	font-size: 16px;
+	color: #4D9AD8;
+	font-weight: bold;
+}
+
+#main_top .title{
+	position: relative;
+	top: 19px;
+}
+
+.more {
+	display: inline-block;
+	margin-right: 10px;
+	float: right;
+}
+
+#main_top #support_ban{
+	display: inline-block;
+	float: left; 	
+}
+
+#main_middle {
+	width: 998px;
+	margin:0 auto;
+	margin-top: 20px;
+	border: 1px solid #cccccc;
+	font-size: 0px;
+}
+
+#main_middle #research_col{
+	display: inline-block;
+	width: 332px;
+	height: 400px;
+	background-color: #FFFFFF;
+}
+
+#main_middle #report_col{
+	display: inline-block;
+	width: 332px;
+	height: 400px;
+	background-color: #FFFFFF;
+	border-left: 1px solid #cccccc;
+	border-right: 1px solid #cccccc;
+}
+
+#main_middle #review_col{
+	display: inline-block;
+	width: 332px;
+	height: 400px;
+	background-color: #FFFFFF;
+}
+
+#main_middle .title-box{
+	height: 53px;
+	font-size: 16px;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+
+#main_middle .title{
+	position: relative;
+	top: 19px;
+}
+
+#main_middle h3 {
+	display: inline-block;
+	margin-left: 10px;
+	float: left;
+}
+
+#main_middle #col1{
+	background-color: #4D9AD8;
+}
+
+#main_middle #col2{
+	background-color: #39C5A9;
+}
+
+#main_middle #col3{
+	background-color: #CBDE2E;
+}
+
+#main_low  {
+	width: 998px;
+	margin:0 auto;
+	margin-top: 20px;
+	border: 1px solid #cccccc;
+	font-size: 0px;
+}
+
+#main_low #low_col1{
+	display: inline-block;
+	width: 332px;
+	height: 400px;
+}
+
+#main_low #low_col1 #mailing{
+	height:130px;
+}
+
+#main_low #low_col1 #book{
+	height:270px;
+}
+
+#main_low #low_col2{
+	display: inline-block;
+	width: 332px;
+	height: 400px;
+	background-color: #FFFFFF;
+	border-left: 1px solid #cccccc;
+	border-right: 1px solid #cccccc;
+}
+
+#main_low .title-box{
+	height: 53px;
+	font-size: 16px;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+
+#main_low  .title{
+	position: relative;
+	top: 19px;
+}
+
+
+#main_low .title-box{
+	height: 53px;
+	font-size: 16px;
+	color: #000000;
+	font-weight: bold;
+}
+
+#main_low .title{
+	position: relative;
+	top: 19px;
+}
+
+#main_low h3 {
+	display: inline-block;
+	margin-left: 10px;
+	float: left;
+}
+
+
+#main_low #low_col2 #notice{
+	height:199px;
+	border-bottom: 1px solid #cccccc;
+}
+
+#main_low #low_col2 #news{
+	height:199px;
+}
+
+
+#main_low #low_col3{
+	display: inline-block;
+	width: 332px;
+	height: 400px;
+	background-color: #FFFFFF;
+}
+
+#family  {
+	width: 1000px;
+	margin:0 auto;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	font-size: 0px;
+}
+
+#family .family-ban{
+	margin-left: 2px;
+	display: inline-block;
+} 
+
+#family #family-label{
+	float: left;
+	width: 108px;
+	height: 56px;
+	display: inline-block;
+	background: url('images/family_bg.gif') no-repeat;
+}
+#family span {
+	display: inline-block;
+	position: relative;
+	top: 18px;
+	left: 18px;
+	font-size: 16px;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+
