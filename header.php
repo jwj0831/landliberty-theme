@@ -32,10 +32,32 @@
 			
 				?>
 			</title>
-		
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+	<script type="text/javascript" language="javascript">
+	   $(document).ready(function() {
+	
+	     $('#menu ul').hover(
+	         function () {
+	           //$('#submenu').css({"display":"block"});
+	           $('#submenu').show();
+	         }, 
+	         function () {
+	           //$('#submenu').css({"display":"none"});
+	          var timer = setTimeout(function(){$('#submenu').hide();}, 5000);
+	         }
+	     );
+	
+	   });
+	   $(document).ready(function(){ 
+    		$("#smooth_slider_1").css('background-image', 'url("http://joepd1004.cafe24.com/wordpress/wp-content/themes/landliberty_v1/images/slide_text_bg.gif")' );
+    		$("#smooth_slider_1").css('background-repeat', 'none');
+    		$("#smooth_slider_1").css('background-position', 'right top');
+		});
+   </script>
+	
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
-	<link rel="stylesheet" media="only screen and (max-device-width: 1024px)" href="ipad.css" type="text/css" />
+	<!--<link rel="stylesheet" media="only screen and (max-device-width: 1024px)" href="ipad.css" type="text/css" />-->
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 		
 	<!-- Pulled from http://code.google.com/p/html5shiv/ -->
@@ -96,45 +118,62 @@
 						</h1>
 					</div>
 						<ul>
-							<li><a class="menu_item" href="' . home_url() . '/about">토지+자유연구소</a>
-								<ul id="submenu1">
-									<li><a id="header_menu1_sub1" href="<?php echo home_url()?>/about/introduction"><span>연구소 소개</span></a></li>
-									<li><a id="header_menu1_sub2" href="<?php echo home_url()?>/about/history"><span>연구소 사람들</span></a></li>
-									<li><a id="header_menu1_sub3" href="<?php echo home_url()?>/about/organization"><span>오시는 길</span></a></li>
-									<li><a id="header_menu1_sub4" href="<?php echo home_url()?>/about/location"><span>공지사항</span></a></li>
-								</ul></li>
-							<li><a class="menu_item" href="' . home_url() . '/activities">연구활동</a>
-								<ul id="submenu2">
-									<li><a id="header_menu2_sub1" href="<?php echo home_url()?>/activities/northbiz"><span>토지+자유 연구</span></a></li>
-									<li><a id="header_menu2_sub2" href="<?php echo home_url()?>/activities/overseas"><span>토지+자유 리포트</span></a></li>
-									<li><a id="header_menu2_sub3" href="<?php echo home_url()?>/activities/overseas"><span>토지+자유 비평</span></a></li>
-								</ul></li>
-							<li><a class="menu_item" href="' . home_url() . '/domestic">매거진</a>
-								<ul id="submenu3">
-									<li><a id="header_menu3_sub1" href="<?php echo home_url()?>/domestic/transformation"><span>칼럼</span></a></li>
-									<li><a id="header_menu3_sub2" href="<?php echo home_url()?>/domestic/education"><span>토지+자유 이야기</span></a></li>
-									<li><a id="header_menu3_sub3" href="<?php echo home_url()?>/domestic/landliberty"><span>토지+자유 소식</span></a></li>
-								</ul></li>	
-							<li><a class="menu_item" href="' . home_url() . '/magazine">연구소뉴스</a>
-								<ul id="submenu4">
-									<li><a id="header_menu4_sub1" href="<?php echo home_url()?>/magazine/peninsula-m"><span>언론보도</span></a></li>
-									<li><a id="header_menu4_sub2" href="<?php echo home_url()?>/magazine/story"><span>연구소 행사</span></a></li>
-									<li><a id="header_menu4_sub3" href="<?php echo home_url()?>/magazine/northstory"><span>대외활동</span></a></li>
-								</ul></li>
-							<li><a class="menu_item" href="' . home_url() . '/support">자료실</a>
-								<ul id="submenu5">
-									<li><a id="header_menu5_sub1" href="<?php echo home_url()?>/magazine/peninsula-m"><span>연구자료</span></a></li>
-									<li><a id="header_menu5_sub2" href="<?php echo home_url()?>/magazine/story"><span>정책자료</span></a></li>
-									<li><a id="header_menu5_sub3" href="<?php echo home_url()?>/magazine/northstory"><span>사진자료</span></a></li>
-									<li><a id="header_menu5_sub4" href="<?php echo home_url()?>/magazine/northstory"><span>영상자료</span></a></li>
-									<li><a id="header_menu5_sub5" href="<?php echo home_url()?>/magazine/northstory"><span>도서안내</span></a></li>
-								</ul></li>
-							<li><a class="menu_item" href="' . home_url() . '/support">후원</a>
-								<ul id="submenu6">
-									<li><a id="header_menu6_sub1" href="<?php echo home_url()?>/magazine/peninsula-m"><span>후원안내</span></a></li>
-									<li><a id="header_menu6_sub2" href="<?php echo home_url()?>/magazine/story"><span>재정보고</span></a></li>
-								</ul></li>
+							<li><a class="menu_item" href="' . home_url() . '/landliberty">토지+자유연구소</a></li>
+							<li><a class="menu_item" href="' . home_url() . '/study">연구활동</a></li>
+							<li><a class="menu_item" href="' . home_url() . '/magazine">매거진</a></li>	
+							<li><a class="menu_item" href="' . home_url() . '/research-news">연구소뉴스</a></li>
+							<li><a class="menu_item" href="' . home_url() . '/reference">자료실</a>	</li>
+							<li><a class="menu_item" href="' . home_url() . '/support">후원</a></li>
 						</ul>	
 					</nav>
-				</div>
+					<div id="submenu">
+						<div id="submenu_fixed">
+							<img src='<?php bloginfo('template_directory'); ?>/images/top_sub_logo.png' alt='토지자유연구소'>
+							<div id="sub1" class="submenu-class">
+								<ul id="submenu1">
+									<li><a id="header_menu1_sub1" href="<?php echo home_url()?>/landliberty/intro"><span>연구소 소개</span></a></li>
+									<li><a id="header_menu1_sub2" href="<?php echo home_url()?>/landliberty/people"><span>연구소 사람들</span></a></li>
+									<li><a id="header_menu1_sub3" href="<?php echo home_url()?>/landliberty/location"><span>오시는 길</span></a></li>
+									<li><a id="header_menu1_sub4" href="<?php echo home_url()?>/landliberty/notice"><span>공지사항</span></a></li>
+								</ul>
+							</div>
+							<div id="sub2" class="submenu-class">
+								<ul id="submenu2">
+									<li><a id="header_menu2_sub1" href="<?php echo home_url()?>/study/research"><span>토지+자유 연구</span></a></li>
+									<li><a id="header_menu2_sub2" href="<?php echo home_url()?>/study/report"><span>토지+자유 리포트</span></a></li>
+									<li><a id="header_menu2_sub3" href="<?php echo home_url()?>/study/review"><span>토지+자유 비평</span></a></li>
+								</ul>
+							</div>
+							<div id="sub3" class="submenu-class">
+								<ul id="submenu3">
+									<li><a id="header_menu3_sub1" href="<?php echo home_url()?>/magazine/column"><span>칼럼</span></a></li>
+									<li><a id="header_menu3_sub2" href="<?php echo home_url()?>/magazine/story"><span>연구소 이야기</span></a></li>
+									<li><a id="header_menu3_sub3" href="<?php echo home_url()?>/magazine/news"><span>연구소 소식</span></a></li>
+								</ul>
+							</div>
+							<div id="sub4" class="submenu-class">
+								<ul id="submenu4">
+									<li><a id="header_menu4_sub1" href="<?php echo home_url()?>/research-news/press"><span>언론보도</span></a></li>
+									<li><a id="header_menu4_sub2" href="<?php echo home_url()?>/research-news/event"><span>연구소 행사</span></a></li>
+									<li><a id="header_menu4_sub3" href="<?php echo home_url()?>/research-news/activities"><span>대외활동</span></a></li>
+								</ul>
+							</div>
+							<div id="sub5" class="submenu-class">
+								<ul id="submenu5">
+									<li><a id="header_menu5_sub1" href="<?php echo home_url()?>/reference/data"><span>연구자료</span></a></li>
+									<li><a id="header_menu5_sub2" href="<?php echo home_url()?>/reference/policy"><span>정책자료</span></a></li>
+									<li><a id="header_menu5_sub3" href="<?php echo home_url()?>/reference/picture"><span>사진자료</span></a></li>
+									<li><a id="header_menu5_sub4" href="<?php echo home_url()?>/reference/movie"><span>영상자료</span></a></li>
+									<li><a id="header_menu5_sub5" href="<?php echo home_url()?>/reference/book"><span>도서안내</span></a></li>
+								</ul>
+							</div>
+							<div id="sub6" class="submenu-class">
+								<ul id="submenu6">
+									<li><a id="header_menu6_sub1" href="<?php echo home_url()?>/support/guide"><span>후원안내</span></a></li>
+									<li><a id="header_menu6_sub2" href="<?php echo home_url()?>/support/finance"><span>재정보고</span></a></li>
+								</ul>
+							</div>
+						</div>
+					</div><!--close submenu-->
+				</div><!--close menu-->
 			</div><!--close head-container-->

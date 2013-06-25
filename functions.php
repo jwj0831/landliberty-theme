@@ -11,6 +11,20 @@ function fn_admin_bar() {
 add_filter('show_admin_bar', 'fn_admin_bar');
 */
 
+function catch_that_image() {
+  global $post, $posts;
+  $first_img = '';
+  ob_start();
+  ob_end_clean();
+  $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+  $first_img = $matches[1][0];
+
+  if(empty($first_img)) {
+    $first_img = "/path/to/default.png";
+  }
+  return $first_img;
+}
+
 function current_page_url() {
 	$pageURL = 'http';
 	if( isset($_SERVER["HTTPS"]) ) {
@@ -27,17 +41,13 @@ function current_page_url() {
 
 function getParentCatID() {
 	$category = get_the_category();
-	if($category[0]->cat_ID == getNoticeCategoryNum())
-		if( $category[2]->cat_ID != null)
-			return $category[2]->cat_ID;
-		else
-			return $category[1]->cat_ID;
-	else {
-		if( $category[1]->cat_ID != null )
-			return $category[1]->cat_ID;
-		else
-			return $category[0]->cat_ID;
-	}
+	
+	if( $category[2]->cat_ID != null)
+		return $category[2]->cat_ID;
+	else if( $category[1]->cat_ID != null )
+		return $category[1]->cat_ID;
+	else
+		return $category[0]->cat_ID;
 }
 
 function getDonationPageURL() {
@@ -46,57 +56,81 @@ function getDonationPageURL() {
 
 
 /*
- * User Define Value Return Function for Hananuri Theme
+function my_search_form( $form ) {
+    $form = '<form role="search" method="get" id="searchform" action="' . home_url( '/' ) . '" >
+    <div><label class="screen-reader-text" for="s">' . __( 'Search for:' ) . '</label>
+    <input type="text" value="' . get_search_query() . '" name="s" id="s" />
+    <input type="submit" id="searchsubmit" value="'. esc_attr__( 'Search' ) .'" />
+    </div>
+    </form>';
+
+    return $form;
+}
+
+add_filter( 'get_search_form', 'my_search_form' );
+*/
+
+/*
+ * User Define Value Return Function for Land Liberty Theme
  */
  
 // Page Value
-function getAboutPageNum() {return 2;}
-function getIntrodcutionPageNum() {return 10;}
-function getHistoryPageNum() {return 12;}
-function getOrganizationPageNum() {return 14;}
-function getLocationPageNum() {return 16;}
-
-function getActivitiesPageNum() {return 19;}
-function getNorthBizPageNum() {return 21;}
-
-function getOverseasPageNum() {return 23;}
-function getOverseasIndiaPageNum() {return 29;}
-function getOverseasVietnamPageNum() {return 27;}
-function getOverseasMongoliaPageNum() {return 25;}
-
-function getDomesticPageNum() {return 37;}
-function getTransformationPageNum() {return 39;}
-function getEducationPageNum() {return 41;}
-function getLandLibertyPageNum() {return 43;}
-
-function getMagazinePageNum() {return 31;}
-function getPeninsulaPageNum() {return 33;}
-function getStoryPageNum() {return 35;}
-function getNorthStoryPageNum() {return 822;}
-
-function getSupportPageNum() {return 45;}
-function getPeriodicSupportPageNum() {return 47;}
-function getTemporalSupportPageNum() {return 49;}
-function getTaxRefundPageNum() {return 59;}
+function getLandLibertyPageNum() {return 5;}
+function getIntroductionPageNum() {return 14;}
+function getPeoplePageNum() {return 11;}
+function getLocationPageNum() {return 9;}
+function getNoticePageNum() {return 2;}
+function getResearchPageNum() {return 30;}
+function getStudyPageNum() {return 36;}
+function getReportPageNum() {return 34;}
+function getReviewPageNum() {return 32;}
+function getMagazinePageNum() {return 69;}
+function getColumnPageNum() {return 71;}
+function getNewsPageNum() {return 75;}
+function getStoryPageNum() {return 73;}
+function getResearchNewsPageNum() {return 82;}
+function getPressPageNum() {return 85;}
+function getEventPageNum() {return 87;}
+function getActivitiesPageNum() {return 89;}
+function getReferencePageNum() {return 92;}
+function getDataPageNum() {return 94;}
+function getPolicyPageNum() {return 97;}
+function getPicturePageNum() {return 99;}
+function getMoviePageNum() {return 101;}
+function getBookPageNum() {return 103;}
+function getSupportPageNum() {return 105;}
+function getGuidePageNum() {return 107;}
+function getFinancePageNum() {return 109;}
 
 // Category Value
-function getNorthBizCategoryNum() {return 1;}
-function getOverseasBizCategoryNum() {return 2;}
-function getOverseasBizIndiaCategoryNum() {return 3;}
-function getOverseasBizVietnamCategoryNum() {return 4;}
-function getOverseasBizMongoliaCategoryNum() {return 5;}
-function getDomesticBizCategoryNum() {return 6;}
-function getTransformationCategoryNum() {return 7;}
-function getEducationCategoryNum() {return 8;}
-function getLandlibertyCategoryNum() {return 9;}
-function getMagazineCategoryNum() {return 10;}
-function getPeninsulaMCategoryNum() {return 11;}
-function getHananuriStoryCategoryNum() {return 12;}
-function getNorthStoryCategoryNum() {return 16;}
-function getDonationCategoryNum() {return 13;}
-function getDonatioinEndCategoryNum() {return 14;}
-function getNoticeCategoryNum() {return 15;}
+function getNoticeCategoryNum() {return 1;}
+function getMagazineCategoryNum() {return 6;}
+function getColumnCategoryNum() {return 7;}
+function getNewsCategoryNum() {return 9;}
+function getStoryCategoryNum() {return 8;}
+function getResearchNewsCategoryNum() {return 10;}
+function getPressCategoryNum() {return 11;}
+function getEventCategoryNum() {return 12;}
+function getActivitiesCategoryNum() {return 13;}
+function getStudyCategoryNum() {return 2;}
+function getReportCategoryNum() {return 4;}
+function getReviewCategoryNum() {return 5;}
+function getResearchCategoryNum() {return 3;}
+function getReferenceCategoryNum() {return 14;}
+function getBookCategoryNum() {return 19;}
+function getPicCategoryNum() {return 17;}
+function getDataCategoryNum() {return 16;}
+function getMovieCategoryNum() {return 18;}
+function getPolicyCategoryNum() {return 15;}
 
+function getScholarCategoryNum() {return 20;}
+function getFieldCategoryNum() {return 21;}
+function getDiscussCategoryNum() {return 22;}
+function getInterviewCategoryNum() {return 23;}
+function getFinanceCategoryNum() {return 25;}
+function getNoticeFixCategoryNum() {return 26;}
+function getPressFixCategoryNum() {return 27;}
+function getFinanceFixCategoryNum() {return 28;}
 
 // Changing excerpt length
 function new_excerpt_length($length) {
@@ -115,7 +149,7 @@ add_filter('excerpt_more', 'new_excerpt_more');
 add_theme_support( 'post-thumbnails' ); 
 add_image_size('excerpt-thumbnail', 180, 140, true);
 
-function hananuri_widgets_init() {
+function landliberty_widgets_init() {
 	register_sidebar(array(
 		'name' => 'Sidebar Widget',
 		'id' => 'sidebar-widget',
@@ -127,22 +161,23 @@ function hananuri_widgets_init() {
 	));
 		
 	register_sidebar(array(
-		'name' => 'event',
-		'before_widget' => '<div id="event-widget">',
+		'name' => 'mailing',
+		'before_widget' => '<div id="mailing-widget">',
 		'after_widget' => '</div>',
 		'before_title' => '<h3>',
 		'after_title' => '</h3>'
 	));
 	
 	register_sidebar(array(
-		'name' => 'support',
-		'before_widget' => '<div id="support-widget">',
+		'name' => 'slider',
+		'before_widget' => '<div id="slider-widget">',
 		'after_widget' => '</div>',
 		'before_title' => '<h3>',
 		'after_title' => '</h3>'
 	));
 	
+		
 }
 
-add_action( 'widgets_init', 'hananuri_widgets_init' );
+add_action( 'widgets_init', 'landliberty_widgets_init' );
 ?>
