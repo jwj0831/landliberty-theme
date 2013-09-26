@@ -61,12 +61,13 @@ get_header(); ?>
 							<div class="pic_title">
 								<a href="<?php echo get_permalink($id) ?>" title="<?php the_title(); ?>" >
 								<?php 
+								/*
 									$len = mb_strlen(get_the_title(), "UTF-8");
 									if($len > 10) {
 										echo mb_substr(get_the_title(), 0, 10, 'UTF-8');
 										echo "...";
 									} 
-									else
+									else*/
 										echo get_the_title();
 								?>
 							</a>
