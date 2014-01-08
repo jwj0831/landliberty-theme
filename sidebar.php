@@ -1,5 +1,3 @@
-<?php $category = getParentCatID(); ?>
-
 <?php 
 	if( is_search() ) {
 		echo '<aside id="search">';
@@ -11,17 +9,19 @@
 <?php 
 	}
 	else if( is_page( getLandLibertyPageNum() ) or is_page( getIntroductionPageNum() ) or 
-		is_page( getPeoplePageNum() ) or is_page( getLocationPageNum() ) or 
-		is_page( getNoticePageNum() ) or $category == getNoticeCategoryNum() or
-		$category == getNoticeFixCategoryNum()
+		is_page( getHistoryPageNum() ) or is_page( getPeoplePageNum() ) or 
+		is_page( getLocationPageNum() ) or is_page( getNoticePageNum() ) or 
+		in_category( array( getNoticeCategoryNum(), getNoticeFixCategoryNum() ) ) 
 	){
 		if( is_page( getLandLibertyPageNum() ) or is_page( getIntroductionPageNum() ) )
 			echo '<aside id="intro">';
+		else if( is_page( getHistoryPageNum() ) )
+			echo '<aside id="history">';
 		else if( is_page( getPeoplePageNum() ) )
 			echo '<aside id="people">';
 		else if( is_page( getLocationPageNum() ) )
 			echo '<aside id="location">';
-		else if( is_page( getNoticePageNum() ) or $category == getNoticeCategoryNum() or $category == getNoticeFixCategoryNum() )
+		else if( is_page( getNoticePageNum() ) or in_category( array( getNoticeCategoryNum(), getNoticeFixCategoryNum() ) ) )
 			echo '<aside id="notice">';
 ?>
 	<div class="side-title">
@@ -29,46 +29,45 @@
 	</div>
 	<ul>
 		<li><a id="left1_1" href="<?php echo home_url() ?>/landliberty/intro"><span>연구소 소개</span></a></li>
-		<li><a id="left1_2" href="<?php echo home_url() ?>/landliberty/people"><span>연구소 사람들</span></a></li>
-		<li><a id="left1_3" href="<?php echo home_url() ?>/landliberty/location"><span>오시는 길</span></a></li>
-		<li><a id="left1_4" href="<?php echo home_url() ?>/landliberty/notice"><span>공지사항</span></a></li>
+		<li><a id="left1_2" href="<?php echo home_url() ?>/landliberty/history"><span>연구소 발자취</span></a></li>
+		<li><a id="left1_3" href="<?php echo home_url() ?>/landliberty/people"><span>연구소 사람들</span></a></li>
+		<li><a id="left1_4" href="<?php echo home_url() ?>/landliberty/location"><span>오시는 길</span></a></li>
+		<li><a id="left1_5" href="<?php echo home_url() ?>/landliberty/notice"><span>공지사항</span></a></li>
 	</ul>
 	
 <?php 
 	}
-	else if( is_page( getResearchPageNum() ) or is_page( getStudyPageNum() ) or 
+	else if( is_page( getResearchActivityPageNum() ) or is_page( getStudyPageNum() ) or 
 		is_page( getReportPageNum() ) or is_page( getReviewPageNum() ) or
-		$category == getResearchCategoryNum() or $category == getReportCategoryNum() or $category == getReviewCategoryNum()
+		in_category( array( getResearchActivityCategoryNum(), getStudyCategoryNum(), getReportCategoryNum(), getReviewCategoryNum() ) )
 	){
-		if( is_page( getResearchPageNum() ) or is_page( getStudyPageNum() ) or $category == getResearchCategoryNum() )
+		if( is_page( getResearchActivityPageNum() ) or is_page( getStudyPageNum() ) or in_category( array( getStudyCategoryNum() ) ) )
 			echo '<aside id="research">';
-		else if( is_page( getReportPageNum() ) or $category == getReportCategoryNum() )
+		else if( is_page( getReportPageNum() ) or in_category( array( getReportCategoryNum() ) ) )
 			echo '<aside id="report">';
-		else if( is_page( getReviewPageNum() ) or $category == getReviewCategoryNum() )
+		else if( is_page( getReviewPageNum() ) or in_category( array( getReviewCategoryNum() ) ) )
 			echo '<aside id="review">';
 ?>
 	<div class="side-title">
 		<span class="side-title-span">연구활동</span><span class="side-sub-title-span">Research Activities</span>
 	</div>
 	<ul>
-		<li><a id="left2_1" href="<?php echo home_url() ?>/study/research"><span>토지+자유 연구</span></a></li>
-		<li><a id="left2_2" href="<?php echo home_url() ?>/study/report"><span>토지+자유 리포트</span></a></li>
-		<li><a id="left2_3" href="<?php echo home_url() ?>/study/review"><span>토지+자유 비평</span></a></li>
+		<li><a id="left2_1" href="<?php echo home_url() ?>/researches/study"><span>토지+자유 연구</span></a></li>
+		<li><a id="left2_2" href="<?php echo home_url() ?>/researches/report"><span>토지+자유 리포트</span></a></li>
+		<li><a id="left2_3" href="<?php echo home_url() ?>/researches/review"><span>토지+자유 비평</span></a></li>
 	</ul>
 	
 <?php 
 	}
 	else if( is_page( getMagazinePageNum() ) or is_page( getColumnPageNum() ) or 
 		is_page( getNewsPageNum() ) or is_page( getStoryPageNum() ) or
-		$category == getMagazineCategoryNum() or $category == getColumnCategoryNum() or
-		$category == getStoryCategoryNum() or $category == getNewsCategoryNum()
+		in_category( array( getMagazineCategoryNum(), getColumnCategoryNum(), getStoryCategoryNum(), getNewsCategoryNum() ) )
 	){
-		if( is_page( getMagazinePageNum() ) or is_page( getColumnPageNum() ) or 
-		$category == getMagazineCategoryNum() or $category == getColumnCategoryNum() )
+		if( is_page( getMagazinePageNum() ) or is_page( getColumnPageNum() ) or in_category( array( getColumnCategoryNum() ) ) )
 			echo '<aside id="column">';
-		else if( is_page( getStoryPageNum() ) or $category == getStoryCategoryNum() )
+		else if( is_page( getStoryPageNum() ) or in_category( array( getStoryCategoryNum() ) ) )
 			echo '<aside id="story">';
-		else if( is_page( getNewsPageNum() ) or $category == getNewsCategoryNum() )
+		else if( is_page( getNewsPageNum() ) or in_category( array( getNewsCategoryNum() ) ) )
 			echo '<aside id="news">';
 ?>
 	<div class="side-title">
@@ -83,18 +82,26 @@
 <?php 
 	}
 	else if( is_page( getResearchNewsPageNum() ) or is_page( getPressPageNum() ) or 
-		is_page( getEventPageNum() ) or is_page( getActivitiesPageNum() ) or 
-		$category == getResearchNewsCategoryNum() or $category == getPressCategoryNum() or
-		$category == getEventCategoryNum() or $category == getActivitiesCategoryNum() or
-		$category == getPressFixCategoryNum()
+		is_page( getEventPageNum() ) or is_page( getActivitiesPageNum() ) or
+		in_category( 
+			array( getResearchNewsCategoryNum(), getPressCategoryNum(), 
+					getEventCategoryNum(), getActivitiesCategoryNum(), 
+					getPressFixCategoryNum(), getScholarCategoryNum(),
+					getFieldCategoryNum(), getDiscussCategoryNum(),
+					getInterviewCategoryNum(), getLectureCategoryNum(),
+					getEtcCategoryNum() ) 
+		) 
 	){
-		if( is_page( getResearchNewsPageNum() ) or is_page( getPressPageNum() ) or 
-		$category == getResearchNewsCategoryNum() or $category == getPressCategoryNum() or
-		$category == getPressFixCategoryNum() )
+		if( is_page( getResearchNewsPageNum() ) or is_page( getPressPageNum() ) or in_category( array( getPressCategoryNum(), getPressFixCategoryNum() ) ) ) 
 			echo '<aside id="press">';
-		else if( is_page( getEventPageNum() ) or $category == getEventCategoryNum() )
+		else if( is_page( getEventPageNum() ) or in_category( array( getEventCategoryNum() ) ) )
 			echo '<aside id="event">';
-		else if( is_page( getActivitiesPageNum() ) or $category == getActivitiesCategoryNum() )
+		else if( is_page( getActivitiesPageNum() ) or in_category( 
+					array( getActivitiesCategoryNum(), getPressFixCategoryNum(), getScholarCategoryNum(),
+						getFieldCategoryNum(), getDiscussCategoryNum(),
+						getInterviewCategoryNum(), getLectureCategoryNum(),
+						getEtcCategoryNum()) ) 
+		)
 			echo '<aside id="activities">';
 ?>
 	<div class="side-title">
@@ -110,21 +117,37 @@
 	}
 	else if( is_page( getReferencePageNum() ) or is_page( getDataPageNum() ) or 
 		is_page( getPolicyPageNum() ) or is_page( getPicturePageNum() ) or
-		is_page( getMoviePageNum() ) or is_page( getBookPageNum() )or 
-		$category == getReferenceCategoryNum() or $category == getDataCategoryNum() or
-		$category == getPolicyCategoryNum() or $category == getPicCategoryNum() or 
-		$category == getMovieCategoryNum() or $category == getBookCategoryNum()
+		is_page( getMoviePageNum() ) or is_page( getBookPageNum() ) or
+		in_category( array( getReferenceCategoryNum(), getDataCategoryNum(), 
+					getPolicyCategoryNum(), getPicCategoryNum(), 
+					getMovieCategoryNum(), getBookCategoryNum(),
+					getTaxCategoryNum(), getCityCategoryNum(),
+					getNorthCategoryNum(), getAlternativeCategoryNum(),
+					getJusticeCategoryNum(), getEtc2CategoryNum(),
+					getMOLITCategoryNum(), getMOSFCategoryNum(),
+					getMOUCategoryNum(), getStatisticsCategoryNum(),
+					getEtc3CategoryNum(),
+					) ) 
 	){
 		if( is_page( getReferencePageNum() ) or is_page( getDataPageNum() ) or 
-		$category == getReferenceCategoryNum() or $category == getDataCategoryNum() )
+			in_category( array( 
+				getDataCategoryNum(), getTaxCategoryNum(), 
+				getCityCategoryNum(), getNorthCategoryNum(), 
+				getAlternativeCategoryNum(), getJusticeCategoryNum(), getEtc2CategoryNum()
+			) ) 
+		)
 			echo '<aside id="data">';
-		else if( is_page( getPolicyPageNum() ) or $category == getPolicyCategoryNum() )
+		else if( is_page( getPolicyPageNum() ) or in_category( array( getPolicyCategoryNum(),
+														getMOLITCategoryNum(), getMOSFCategoryNum(),
+														getMOUCategoryNum(), getStatisticsCategoryNum(),
+														getEtc3CategoryNum(),) ) 
+		)
 			echo '<aside id="policy">';
-		else if( is_page( getPicturePageNum() ) or $category == getPicCategoryNum() )
+		else if( is_page( getPicturePageNum() ) or in_category( array( getPicCategoryNum() ) ) )
 			echo '<aside id="picture">';
-		else if( is_page( getMoviePageNum() ) or $category == getMovieCategoryNum() )
+		else if( is_page( getMoviePageNum() ) or in_category( array( getMovieCategoryNum() ) ) )
 			echo '<aside id="movie">';
-		else if( is_page( getBookPageNum() ) or $category == getBookCategoryNum() )
+		else if( is_page( getBookPageNum() ) or in_category( array( getBookCategoryNum() ) ) )
 			echo '<aside id="book">';
 ?>
 	<div class="side-title">
@@ -141,13 +164,11 @@
 <?php 
 	}
 	else if( is_page( getSupportPageNum() ) or is_page( getGuidePageNum() ) or 
-		is_page( getFinancePageNum() ) or $category == getFinanceCategoryNum() or
-		$category == getFinanceFixCategoryNum()
+		is_page( getFinancePageNum() ) or in_category( array( getFinanceCategoryNum(), getFinanceFixCategoryNum() ) ) 
 	){
 		if( is_page( getSupportPageNum() ) or is_page( getGuidePageNum() ) )
 			echo '<aside id="guide">';
-		else if( is_page( getFinancePageNum() ) or $category == getFinanceCategoryNum() or
-		$category == getFinanceFixCategoryNum() )
+		else if( is_page( getFinancePageNum() ) or in_category( array( getFinanceCategoryNum(), getFinanceFixCategoryNum() ) ) )
 			echo '<aside id="finance">';
 ?>
 	<div class="side-title">

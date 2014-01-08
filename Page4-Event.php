@@ -23,7 +23,7 @@ get_header(); ?>
 			</div>
 			<div class="subpage">
 				<div class="sub-title-bar">
-					<span class="subpage-title">연구소 행사</span><span class="subpage-title-detail">연구소 행사 상세하게</span>
+					<span class="subpage-title">연구소 행사</span><span class="subpage-title-detail"></span>
 					<img class="sub-title-icon" src='<?php bloginfo('template_url'); ?>/images/sub/sub_t_img.gif' >
 				</div>
 				
@@ -52,9 +52,14 @@ get_header(); ?>
 						<div class="news_img">
 							<a href="<?php echo get_permalink($id) ?>" title="<?php the_title(); ?>" >
 								<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($id), 'excerpt-thumbnail');
-									$url = $thumb['0'];
+									$thumb_img_url = $thumb['0'];
+									$first_img_url = catch_that_image();
+									if($thumb_img_url == "none")
+										$url = $first_img_url;
+									else 
+										$url = $thumb_img_url;
 								?>		
-								<img width=160 height=110 src=<?= $url ?>>
+								<img width=160 height=110 src=<?php echo $url; ?>>
 							</a>
 						</div>
 						<h3>

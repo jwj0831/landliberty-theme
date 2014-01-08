@@ -23,7 +23,7 @@ get_header(); ?>
 			</div>
 			<div class="subpage">
 				<div class="sub-title-bar-noborder">
-					<span class="subpage-title">연구소 소개</span><span class="subpage-title-detail">연구소 소개 자세하게...</span>
+					<span class="subpage-title">연구소 소개</span><span class="subpage-title-detail">Institute of Land and liberty</span>
 					<img class="sub-title-icon" src='<?php bloginfo('template_url'); ?>/images/sub/sub_t_img.gif' >
 				</div>
 				
@@ -39,8 +39,8 @@ get_header(); ?>
 								참다운 <span id="sum-span-2">자유</span>
 							</div>
 							<br>
-							<div style="font-weight:bold;font-size:14px;margin-bottom:5px">토지+자유연구소에 오신것을 환영합니다</div>
-							<div style="width:380px;font-size:12px;color:#959595;line-height:18px">
+							<div style="font-weight:bold;font-size:15px;margin-bottom:5px">토지+자유연구소에 오신것을 환영합니다</div>
+							<div style="width:380px;font-size:13px;color:#777777;line-height:19px">
 							어느 사회나 평등한 토지권이 잘 적용된 사회일수록 안전했고, 경제가 발전했으며, 건강한 문화가 꽃피웠습니다. 반면 이 사상에서 멀어지면 멀어질수록 사회는 불안해졌고, 빈부격차는 심해졌으며, 문화는 병들어갔습니다. 이 사실은 오늘날에도 마찬가지입니다. 우리를 끊임없이 괴롭히는 주거 불안, 일자리 불안, 금융 불안, 노후 불안을 해소하고 참다운 자유를 누리기 위해서는 평등한 토지권이 회복돼야 합니다. 
 							</div>
 						</div>
@@ -57,6 +57,7 @@ get_header(); ?>
 						<div id="vision-content3">
 							남과 북이 하나로<br> 통합될 수 있는 <b>통일한국의<br> 대안적 경제체제</b> 연구
 						</div>
+						<div class="clear"></div>
 					</div>
 					<div id="object">
 						<div id="research-object-label">연구과제</div>

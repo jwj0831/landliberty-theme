@@ -23,7 +23,7 @@ get_header(); ?>
 			</div>
 			<div class="subpage">
 				<div class="sub-title-bar-noborder">
-					<span class="subpage-title">오시는 길</span><span class="subpage-title-detail">오시는 길</span>
+					<span class="subpage-title">오시는 길</span><span class="subpage-title-detail"></span>
 					<img class="sub-title-icon" src='<?php bloginfo('template_url'); ?>/images/sub/sub_t_img.gif' >
 				</div>
 				
@@ -31,15 +31,15 @@ get_header(); ?>
 					<div style="float:left;font-size:30px;font-weight:bold">INFO</div>
 					<div style="float:left;margin-left:130px">
 						<div style="border-bottom:2px #222222 solid"></div>
-						<div style="border-bottom:1px #dddddd dotted;padding:8px 0;font-size:12px;font-weight:bold;color:#222222">ADDRESS</div>
-						<div style="border-bottom:1px #dddddd dotted;padding:8px 0;font-size:12px;font-weight:bold;color:#222222">TEL</div>
-						<div style="border-bottom:1px #dddddd dotted;padding:8px 0;font-size:12px;font-weight:bold;color:#222222">E-mail</div>
+						<div style="border-bottom:1px #dddddd dotted;padding:8px 0;font-size:13px;font-weight:bold;color:#222222">ADDRESS</div>
+						<div style="border-bottom:1px #dddddd dotted;padding:8px 0;font-size:13px;font-weight:bold;color:#222222">TEL</div>
+						<div style="border-bottom:1px #dddddd dotted;padding:8px 0;font-size:13px;font-weight:bold;color:#222222">E-mail</div>
 					</div>
 					<div style="float:left;width:400px">
 						<div style="border-bottom:2px #222222 solid;"></div>
-						<div style="border-bottom:1px #dddddd dotted;padding:8px 0;font-size:12px;color:#919191;padding-left:40px">서울시 용산구 원효로 1가 48-10 헨리조지센터</div>
-						<div style="border-bottom:1px #dddddd dotted;padding:8px 0;font-size:12px;color:#919191;padding-left:40px">02) 736-4906</div>
-						<div style="border-bottom:1px #dddddd dotted;padding:8px 0;font-size:12px;color:#919191;padding-left:40px">land-liberty@hanmail.net</div>
+						<div style="border-bottom:1px #dddddd dotted;padding:8px 0;font-size:13px;color:#919191;padding-left:40px">서울시 용산구 원효로 1가 48-10 헨리조지센터</div>
+						<div style="border-bottom:1px #dddddd dotted;padding:8px 0;font-size:13px;color:#919191;padding-left:40px">02) 736-4906</div>
+						<div style="border-bottom:1px #dddddd dotted;padding:8px 0;font-size:13px;color:#919191;padding-left:40px">land-liberty@hanmail.net</div>
 					</div>
 					
 					<div style="clear:both"></div>

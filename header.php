@@ -36,20 +36,20 @@
 	<script type="text/javascript" language="javascript">
 	   $(document).ready(function() {
 	
-	     $('#menu ul').hover(
+	     $('#menu').hover(
 	         function () {
 	           //$('#submenu').css({"display":"block"});
 	           $('#submenu').show();
 	         }, 
 	         function () {
-	           //$('#submenu').css({"display":"none"});
-	          var timer = setTimeout(function(){$('#submenu').hide();}, 5000);
+	           $('#submenu').css({"display":"none"});
+	          //var timer = setTimeout(function(){$('#submenu').hide();}, 2500);
 	         }
 	     );
 	
 	   });
 	   $(document).ready(function(){ 
-    		$("#smooth_slider_1").css('background-image', 'url("http://joepd1004.cafe24.com/wordpress/wp-content/themes/landliberty_v1/images/slide_text_bg.gif")' );
+    		$("#smooth_slider_1").css('background-image', 'url("http://landliberty13.cafe24.com/eocjsejr/wp-content/themes/landliberty_v1/images/slide_text_bg.gif")' );
     		$("#smooth_slider_1").css('background-repeat', 'none');
     		$("#smooth_slider_1").css('background-position', 'right top');
 		});
@@ -64,6 +64,18 @@
 	<!--[if lt IE 9]>
 	<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-30468978-2', 'landliberty.or.kr');
+  ga('send', 'pageview');
+
+</script>
+
 		
 <?php
 	if ( is_singular() && get_option( 'thread_comments' ) )
@@ -99,10 +111,6 @@
 								}
 							?>
 						</div>
-						<div id="bar">|</div> 
-						<div id="join">
-							<a>JOIN</a>
-						</div>
 						<div id="search">
 							<?php get_search_form( $echo ); ?>
 						</div>
@@ -118,12 +126,12 @@
 						</h1>
 					</div>
 						<ul>
-							<li><a class="menu_item" href="' . home_url() . '/landliberty">토지+자유연구소</a></li>
-							<li><a class="menu_item" href="' . home_url() . '/study">연구활동</a></li>
-							<li><a class="menu_item" href="' . home_url() . '/magazine">매거진</a></li>	
-							<li><a class="menu_item" href="' . home_url() . '/research-news">연구소뉴스</a></li>
-							<li><a class="menu_item" href="' . home_url() . '/reference">자료실</a>	</li>
-							<li><a class="menu_item" href="' . home_url() . '/support">후원</a></li>
+							<li><a class="menu_item" href="<?php echo home_url()?>/landliberty">토지+자유연구소</a></li>
+							<li><a class="menu_item" href="<?php echo home_url()?>/researches">연구활동</a></li>
+							<li><a class="menu_item" href="<?php echo home_url()?>/magazine">매거진</a></li>	
+							<li><a class="menu_item" href="<?php echo home_url()?>/research-news">연구소 뉴스</a></li>
+							<li><a class="menu_item" href="<?php echo home_url()?>/reference">자료실</a>	</li>
+							<li><a class="menu_item" href="<?php echo home_url()?>/support">후원</a></li>
 						</ul>	
 					</nav>
 					<div id="submenu">
@@ -132,16 +140,17 @@
 							<div id="sub1" class="submenu-class">
 								<ul id="submenu1">
 									<li><a id="header_menu1_sub1" href="<?php echo home_url()?>/landliberty/intro"><span>연구소 소개</span></a></li>
-									<li><a id="header_menu1_sub2" href="<?php echo home_url()?>/landliberty/people"><span>연구소 사람들</span></a></li>
-									<li><a id="header_menu1_sub3" href="<?php echo home_url()?>/landliberty/location"><span>오시는 길</span></a></li>
-									<li><a id="header_menu1_sub4" href="<?php echo home_url()?>/landliberty/notice"><span>공지사항</span></a></li>
+									<li><a id="header_menu1_sub2" href="<?php echo home_url()?>/landliberty/history"><span>연구소 발자취</span></a></li>
+									<li><a id="header_menu1_sub3" href="<?php echo home_url()?>/landliberty/people"><span>연구소 사람들</span></a></li>
+									<li><a id="header_menu1_sub4" href="<?php echo home_url()?>/landliberty/location"><span>오시는 길</span></a></li>
+									<li><a id="header_menu1_sub5" href="<?php echo home_url()?>/landliberty/notice"><span>공지사항</span></a></li>
 								</ul>
 							</div>
 							<div id="sub2" class="submenu-class">
 								<ul id="submenu2">
-									<li><a id="header_menu2_sub1" href="<?php echo home_url()?>/study/research"><span>토지+자유 연구</span></a></li>
-									<li><a id="header_menu2_sub2" href="<?php echo home_url()?>/study/report"><span>토지+자유 리포트</span></a></li>
-									<li><a id="header_menu2_sub3" href="<?php echo home_url()?>/study/review"><span>토지+자유 비평</span></a></li>
+									<li><a id="header_menu2_sub1" href="<?php echo home_url()?>/researches/study"><span>토지+자유 연구</span></a></li>
+									<li><a id="header_menu2_sub2" href="<?php echo home_url()?>/researches/report"><span>토지+자유 리포트</span></a></li>
+									<li><a id="header_menu2_sub3" href="<?php echo home_url()?>/researches/review"><span>토지+자유 비평</span></a></li>
 								</ul>
 							</div>
 							<div id="sub3" class="submenu-class">

@@ -20,7 +20,7 @@ function catch_that_image() {
   $first_img = $matches[1][0];
 
   if(empty($first_img)) {
-    $first_img = "/path/to/default.png";
+    $first_img = "none";
   }
   return $first_img;
 }
@@ -50,8 +50,32 @@ function getParentCatID() {
 		return $category[0]->cat_ID;
 }
 
+function getColumnPageURL() {
+	return "http://landliberty.or.kr/magazine/column";
+}
+
 function getDonationPageURL() {
-	return "http://www.hananuri.org/support/periodic_support";
+	return "http://landliberty.or.kr/support/guide";
+}
+
+function getStudyPageURL(){
+	return "http://landliberty.or.kr/research/study";
+}
+
+function getReportPageURL(){
+	return "http://landliberty.or.kr/research/report";
+}
+
+function getReviewPageURL(){
+	return "http://landliberty.or.kr/research/review";
+}
+
+function getNoticePageURL(){
+	return "http://landliberty.or.kr/landliberty/notice";
+}
+
+function getNewsPageURL(){
+	return "http://landliberty.or.kr/magazine/news";
 }
 
 
@@ -75,62 +99,90 @@ add_filter( 'get_search_form', 'my_search_form' );
  */
  
 // Page Value
-function getLandLibertyPageNum() {return 5;}
-function getIntroductionPageNum() {return 14;}
-function getPeoplePageNum() {return 11;}
-function getLocationPageNum() {return 9;}
-function getNoticePageNum() {return 2;}
-function getResearchPageNum() {return 30;}
-function getStudyPageNum() {return 36;}
-function getReportPageNum() {return 34;}
-function getReviewPageNum() {return 32;}
-function getMagazinePageNum() {return 69;}
-function getColumnPageNum() {return 71;}
-function getNewsPageNum() {return 75;}
-function getStoryPageNum() {return 73;}
-function getResearchNewsPageNum() {return 82;}
-function getPressPageNum() {return 85;}
-function getEventPageNum() {return 87;}
-function getActivitiesPageNum() {return 89;}
-function getReferencePageNum() {return 92;}
-function getDataPageNum() {return 94;}
-function getPolicyPageNum() {return 97;}
-function getPicturePageNum() {return 99;}
-function getMoviePageNum() {return 101;}
-function getBookPageNum() {return 103;}
-function getSupportPageNum() {return 105;}
-function getGuidePageNum() {return 107;}
-function getFinancePageNum() {return 109;}
+function getLandLibertyPageNum() {return 2;}
+	function getIntroductionPageNum() {return 7;}
+	function getHistoryPageNum() {return 839;}
+	function getPeoplePageNum() {return 9;}
+	function getLocationPageNum() {return 11;}
+	function getNoticePageNum() {return 13;}
+
+function getResearchActivityPageNum() {return 15;}
+	function getStudyPageNum() {return 17;}
+	function getReportPageNum() {return 19;}
+	function getReviewPageNum() {return 21;}
+	
+function getMagazinePageNum() {return 23;}
+	function getColumnPageNum() {return 25;}
+	function getStoryPageNum() {return 27;}
+	function getNewsPageNum() {return 29;}
+	
+function getResearchNewsPageNum() {return 31;}
+	function getPressPageNum() {return 33;}
+	function getEventPageNum() {return 35;}
+	function getActivitiesPageNum() {return 37;}
+
+function getReferencePageNum() {return 39;}
+	function getDataPageNum() {return 41;}
+	function getPolicyPageNum() {return 43;}
+	function getPicturePageNum() {return 45;}
+	function getMoviePageNum() {return 47;}
+	function getBookPageNum() {return 49;}
+	
+function getSupportPageNum() {return 51;}
+	function getGuidePageNum() {return 53;}
+	function getFinancePageNum() {return 55;}
 
 // Category Value
 function getNoticeCategoryNum() {return 1;}
-function getMagazineCategoryNum() {return 6;}
-function getColumnCategoryNum() {return 7;}
-function getNewsCategoryNum() {return 9;}
-function getStoryCategoryNum() {return 8;}
-function getResearchNewsCategoryNum() {return 10;}
-function getPressCategoryNum() {return 11;}
-function getEventCategoryNum() {return 12;}
-function getActivitiesCategoryNum() {return 13;}
-function getStudyCategoryNum() {return 2;}
-function getReportCategoryNum() {return 4;}
-function getReviewCategoryNum() {return 5;}
-function getResearchCategoryNum() {return 3;}
-function getReferenceCategoryNum() {return 14;}
-function getBookCategoryNum() {return 19;}
-function getPicCategoryNum() {return 17;}
-function getDataCategoryNum() {return 16;}
-function getMovieCategoryNum() {return 18;}
-function getPolicyCategoryNum() {return 15;}
+	function getNoticeFixCategoryNum() {return 2;}
 
-function getScholarCategoryNum() {return 20;}
-function getFieldCategoryNum() {return 21;}
-function getDiscussCategoryNum() {return 22;}
-function getInterviewCategoryNum() {return 23;}
-function getFinanceCategoryNum() {return 25;}
-function getNoticeFixCategoryNum() {return 26;}
-function getPressFixCategoryNum() {return 27;}
-function getFinanceFixCategoryNum() {return 28;}
+function getResearchActivityCategoryNum() {return 3;}
+	function getStudyCategoryNum() {return 4;}
+	function getReportCategoryNum() {return 5;}
+	function getReviewCategoryNum() {return 6;}
+
+function getMagazineCategoryNum() {return 7;}
+	function getColumnCategoryNum() {return 8;}
+	function getStoryCategoryNum() {return 9;}
+	function getNewsCategoryNum() {return 10;}
+
+function getResearchNewsCategoryNum() {return 11;}
+	function getPressCategoryNum() {return 12;}
+		function getPressFixCategoryNum() {return 25;}
+	function getEventCategoryNum() {return 13;}
+	function getActivitiesCategoryNum() {return 14;}
+		function getScholarCategoryNum() {return 15;}
+		function getFieldCategoryNum() {return 16;}
+		function getDiscussCategoryNum() {return 17;}
+		function getInterviewCategoryNum() {return 18;}
+		function getLectureCategoryNum() {return 29;}
+		function getEtcCategoryNum() {return 30;}
+
+function getReferenceCategoryNum() {return 19;}
+	function getDataCategoryNum() {return 20;}
+		function getTaxCategoryNum() {return 31;}
+		function getCityCategoryNum() {return 32;}
+		function getNorthCategoryNum() {return 33;}
+		function getAlternativeCategoryNum() {return 34;}
+		function getJusticeCategoryNum() {return 35;}
+		function getEtc2CategoryNum() {return 36;}
+	function getPolicyCategoryNum() {return 21;}
+		function getMOLITCategoryNum() {return 37;}
+		function getMOSFCategoryNum() {return 38;}
+		function getMOUCategoryNum() {return 39;}
+		function getStatisticsCategoryNum() {return 40;}
+		function getEtc3CategoryNum() {return 41;}
+	function getPicCategoryNum() {return 22;}
+	function getMovieCategoryNum() {return 23;}
+	function getBookCategoryNum() {return 24;}
+
+function getSupportCategoryNum() {return 26;}
+	function getFinanceCategoryNum() {return 27;}
+		function getFinanceFixCategoryNum() {return 28;}
+
+
+function getMainNoticeCategoryNum() {return 42;}
+function getMainNewsCategoryNum() {return 43;}
 
 // Changing excerpt length
 function new_excerpt_length($length) {

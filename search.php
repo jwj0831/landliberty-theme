@@ -34,6 +34,7 @@ get_header(); ?>
                 <?php /* Start the Loop */ ?>
                 <?php while ( have_posts() ) : 
                 	the_post(); 
+					if (is_search() && ($post->post_type=='page')) continue;
 					$id= get_the_ID(); 
 				?>
 					
@@ -82,6 +83,7 @@ get_header(); ?>
 				</div>
 			</div><!--close subpage-->
 		</div><!--close content-panel-->
+		<div class="clear"></div>
 	</div><!--close subpage_fixed-->
 </div><!--close subpage_stretched-->
 <div class="clear"></div>

@@ -23,7 +23,7 @@ get_header(); ?>
 			</div>
 			<div class="subpage">
 				<div class="sub-title-bar">
-					<span class="subpage-title">연구자료</span><span class="subpage-title-detail">연구자료 상세하게</span>
+					<span class="subpage-title">연구자료</span><span class="subpage-title-detail"></span>
 					<img class="sub-title-icon" src='<?php bloginfo('template_url'); ?>/images/sub/sub_t_img.gif' >
 				</div>
 				
@@ -31,24 +31,53 @@ get_header(); ?>
 					
 					<div class="cat-bar">
 						<ul>
-							<li id="cat-total"><span>전체</span> |</li>
-							<li id="cat-1">1
-								(<?php $category = get_category_by_slug( 'activities' ); echo $category->count; ?>)
+							<li id="cat-total">
+								<a href="?cat=default"><span>전체</span></a>
+								(<?php 
+									$category = get_category_by_slug( 'tax' ); 
+									$tot =  $category->count; 
+									$category = get_category_by_slug( 'city' ); 
+									$tot +=  $category->count; 
+									$category = get_category_by_slug( 'north' ); 
+									$tot +=  $category->count; 
+									$category = get_category_by_slug( 'alternative' ); 
+									$tot +=  $category->count;
+									$category = get_category_by_slug( 'justice' ); 
+									$tot +=  $category->count;
+									$category = get_category_by_slug( 'etc2' ); 
+									$tot +=  $category->count; 
+									echo $tot;
+								?>)
 							|</li>
-							<li id="cat-2">2
-								(<?php $category = get_category_by_slug( 'activities' ); echo $category->count; ?>)	
+							<li id="cat-1">
+								<a href="?cat=tax">조세재정</a>
+								(<?php $category = get_category_by_slug( 'tax' ); echo $category->count; ?>)
 							|</li>
-							<li id="cat-3">3 
-								(<?php $category = get_category_by_slug( 'activities' ); echo $category->count; ?>)
+							<li id="cat-2">
+								<a href="?cat=city">도시재생</a>
+								(<?php $category = get_category_by_slug( 'city' ); echo $category->count; ?>)	
 							|</li>
-							<li id="cat-4">4
-								(<?php $category = get_category_by_slug( 'activities' ); echo $category->count; ?>)
+							<li id="cat-3">
+								<a href="?cat=north">통일북한</a>
+								(<?php $category = get_category_by_slug( 'north' ); echo $category->count; ?>)
+							|</li>
+							<li id="cat-4">
+								<a href="?cat=alternative">대안체제</a>
+								(<?php $category = get_category_by_slug( 'alternative' ); echo $category->count; ?>)
+							|</li>
+							<li id="cat-4">
+								<a href="?cat=justice">사회정의론</a>
+								(<?php $category = get_category_by_slug( 'justice' ); echo $category->count; ?>)
+							|</li>
+							<li id="cat-4">
+								<a href="?cat=etc2">기타</a>
+								(<?php $category = get_category_by_slug( 'etc2' ); echo $category->count; ?>)
 							</li>
 						</ul>
 					</div>
-					<div class="board">
+					<div class="cat-board">
 						<div class="board-meta-bar">
-							<span class="num">번호</span>
+							<span class="cat">분류</span>
 							<span class="title">제목</span>
 							<span class="writer">글쓴이</span>
 							<span class="count">조회수</span>
@@ -63,31 +92,89 @@ get_header(); ?>
 		                        $paged = 1;
 		                }
 						
-						query_posts(array(
-							'cat' => getDataCategoryNum(),
-							'posts_per_page' => 10,
-							'paged' => $paged
-							)					
-						);
+						$cat = 'default';
+						$cat = htmlspecialchars($_GET["cat"]);
+						
+						if( $cat ==  'tax' ) {
+							query_posts(array(
+								'cat' => getTaxCategoryNum(),
+								'posts_per_page' => 10,
+								'paged' => $paged
+								)					
+							);
+						}
+						else if( $cat ==  'city' ) {
+							query_posts(array(
+								'cat' => getCityCategoryNum(),
+								'posts_per_page' => 10,
+								'paged' => $paged
+								)					
+							);
+						}
+						else if( $cat ==  'north' ) {
+							query_posts(array(
+								'cat' => getNorthCategoryNum(),
+								'posts_per_page' => 10,
+								'paged' => $paged
+								)					
+							);
+						}
+						else if( $cat ==  'alternative' ) {
+							query_posts(array(
+								'cat' => getAlternativeCategoryNum(),
+								'posts_per_page' => 10,
+								'paged' => $paged
+								)					
+							);
+						}
+						else if( $cat ==  'justice' ) {
+							query_posts(array(
+								'cat' => getJusticeCategoryNum(),
+								'posts_per_page' => 10,
+								'paged' => $paged
+								)					
+							);
+						}
+						else if( $cat ==  'etc2' ) {
+							query_posts(array(
+								'cat' => getEtc2CategoryNum(),
+								'posts_per_page' => 10,
+								'paged' => $paged
+								)					
+							);
+						}
+						else {
+							query_posts(array(
+								'cat' => getDataCategoryNum(),
+								'posts_per_page' => 10,
+								'paged' => $paged
+								)					
+							);
+						}
+						
 						$posts = new WP_Query($args);
 						while( have_posts()) : 
 							the_post();
 							$id = get_the_ID();
 						?>
 						<div class="list-row">
-							<div class="num">
-								<?php echo $id; ?>
+							<div class="cat">
+								<?php
+									$category = get_the_category(); 
+									echo $category[0]->cat_name;
+								?>
 							</div>
 							<div class="title">
 								<a href="<?php echo get_permalink($id) ?>" title="<?php the_title(); ?>" >
 									<?php 
-										$len = mb_strlen(get_the_title(), "UTF-8");
-										if($len > 50) {
-											echo mb_substr(get_the_title(), 0, 50, 'UTF-8');
+										$title = get_the_title();
+										$len = mb_strlen($title, "UTF-8");
+										if($len > 28) {
+											echo mb_substr($title, 0, 28, "UTF-8");
 											echo "...";
 										} 
 										else
-											echo get_the_title();
+											echo $title;
 									?>
 								</a>
 							</div>

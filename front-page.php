@@ -14,7 +14,7 @@
 						<div class="title">
 							<img src='<?php bloginfo('template_url'); ?>/images/icon_column.gif' alt='칼럼'>
 							<span id="column-label">칼럼</span>
-							<span class="more">+</span>
+							<a href="<?php echo getColumnPageURL() ?>" ><span class="more">+</span></a>
 						</div>
 					</div>
 					<div id="column-content">
@@ -31,9 +31,14 @@
 						<div class="column-img">
 								<a href="<?php echo get_permalink($id) ?>" title="<?php the_title(); ?>" >
 									<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($id), 'excerpt-thumbnail');
-										$url = $thumb['0'];
+										$thumb_img_url = $thumb['0'];
+										$first_img_url = catch_that_image();
+										if($thumb_img_url == "none")
+											$url = $first_img_url;
+										else 
+											$url = $thumb_img_url;
 									?>		
-									<img width=80 height=80 src=<?= $url ?>>
+									<img width=80 height=80 src=<?php echo $url; ?>>
 								</a>
 						</div>
 						
@@ -41,8 +46,8 @@
 							<a href="<?php echo get_permalink($id) ?>" title="<?php the_title(); ?>" >
 								<?php 
 									$len = mb_strlen(get_the_title(), "UTF-8");
-									if($len > 16) {
-										echo mb_substr(get_the_title(), 0, 16, 'UTF-8');
+									if($len > 32) {
+										echo mb_substr(get_the_title(), 0, 32, 'UTF-8');
 										echo "...";
 									} 
 									else
@@ -52,7 +57,7 @@
 						</div>
 						<div class="column-text">
 								<a href="<?php echo get_permalink($id) ?>" title="<?php the_title(); ?>" >
-									<?php echo mb_substr(get_the_excerpt(), 0, 100, 'UTF-8'); ?> ...				
+									<?php echo mb_substr(get_the_excerpt(), 0, 80, 'UTF-8'); ?> ...				
 								</a>
 						</div>
 						<?php endwhile; 
@@ -60,25 +65,26 @@
 					</div>
 				</div>
 				<div id="support_ban">
-					<a id= href="<?php echo home_url() ?>">
+					<a href="<?php echo getDonationPageURL() ?>">
 						<img src='<?php bloginfo('template_url'); ?>/images/main_support.gif' alt='연구소 후원'>
 					</a>
 				</div>
 			</div>
 		</div><!--close main_top-->
+		<div class="clear"></div>
 		
 		<div id="main_middle">
-			<div id="research_col" class="middle-col">
+			<div id="study_col" class="middle-col">
 				<div id="col1" class="title-box">
 					<div class="title">
 						<h3>토지+자유 연구</h3>
-						<span class="more">+</span>
+						<a href="<?php echo getStudyPageURL() ?>" ><span class="more">+</span></a>
 					</div>
 				</div>
 				<div class="front-col-content">
 					<?php
 					$args = array(
-							'cat' => getResearchCategoryNum(),
+							'cat' => getStudyCategoryNum(),
 							'posts_per_page' => 2,
 							);
 					
@@ -103,18 +109,23 @@
 						<div class="news_img">
 							<a href="<?php echo get_permalink($id) ?>" title="<?php the_title(); ?>" >
 								<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($id), 'excerpt-thumbnail');
-									$url = $thumb['0'];
+									$thumb_img_url = $thumb['0'];
+									$first_img_url = catch_that_image();
+									if($thumb_img_url == "none")
+										$url = $first_img_url;
+									else 
+										$url = $thumb_img_url;
 								?>		
-								<img width=76 height=60 src=<?= $url ?>>
+								<img width=76 height=60 src=<?php echo $url; ?>>
 							</a>
 						</div>
 						<div class="news_date">
-							<?php the_time('Y. j. d') ?>
+							<?php the_time('Y/m/d') ?>
 						</div>
 						
 						<div class="news_text">
 							<a href="<?php echo get_permalink($id) ?>" title="<?php the_title(); ?>" >
-								<?php echo mb_substr(get_the_excerpt(), 0, 50, 'UTF-8'); ?> ...				
+								<?php echo mb_substr(get_the_excerpt(), 0, 55, 'UTF-8'); ?> ...				
 							</a>
 						</div>
 					</div>
@@ -123,12 +134,12 @@
 					wp_reset_query(); ?>
 					
 				</div><!--close front_col-content-->
-			</div><!--close research_col-->
+			</div><!--close study_col-->
 			<div id="report_col" class="middle-col">
 				<div id="col2" class="title-box">
 					<div class="title">
 						<h3>토지+자유 리포트</h3>
-						<span class="more">+</span>
+						<a href="<?php echo getReportPageURL() ?>" ><span class="more">+</span></a>
 					</div>
 				</div>
 				<div class="front-col-content">
@@ -159,18 +170,23 @@
 						<div class="news_img">
 							<a href="<?php echo get_permalink($id) ?>" title="<?php the_title(); ?>" >
 								<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($id), 'excerpt-thumbnail');
-									$url = $thumb['0'];
+									$thumb_img_url = $thumb['0'];
+									$first_img_url = catch_that_image();
+									if($thumb_img_url == "none")
+										$url = $first_img_url;
+									else 
+										$url = $thumb_img_url;
 								?>		
-								<img width=76 height=60 src=<?= $url ?>>
+								<img width=76 height=60 src=<?php echo $url; ?>>
 							</a>
 						</div>
 						<div class="news_date">
-							<?php the_time('Y. j. d') ?>
+							<?php the_time('Y/m/d') ?>
 						</div>
 						
 						<div class="news_text">
 							<a href="<?php echo get_permalink($id) ?>" title="<?php the_title(); ?>" >
-								<?php echo mb_substr(get_the_excerpt(), 0, 50, 'UTF-8'); ?> ...				
+								<?php echo mb_substr(get_the_excerpt(), 0, 55, 'UTF-8'); ?> ...				
 							</a>
 						</div>
 					</div>
@@ -182,7 +198,7 @@
 				<div id="col3"class="title-box">
 					<div class="title">
 						<h3>토지+자유 비평</h3>
-						<span class="more">+</span>
+						<a href="<?php echo getReviewPageURL() ?>" ><span class="more">+</span></a>
 					</div>
 				</div>
 				<div class="front-col-content">
@@ -213,18 +229,23 @@
 						<div class="news_img">
 							<a href="<?php echo get_permalink($id) ?>" title="<?php the_title(); ?>" >
 								<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($id), 'excerpt-thumbnail');
-									$url = $thumb['0'];
+									$thumb_img_url = $thumb['0'];
+									$first_img_url = catch_that_image();
+									if($thumb_img_url == "none")
+										$url = $first_img_url;
+									else 
+										$url = $thumb_img_url;
 								?>		
-								<img width=76 height=60 src=<?= $url ?>>
+								<img width=76 height=60 src=<?php echo $url; ?>>
 							</a>
 						</div>
 						<div class="news_date">
-							<?php the_time('Y. j. d') ?>
+							<?php the_time('Y/m/d') ?>
 						</div>
 						
 						<div class="news_text">
 							<a href="<?php echo get_permalink($id) ?>" title="<?php the_title(); ?>" >
-								<?php echo mb_substr(get_the_excerpt(), 0, 50, 'UTF-8'); ?> ...				
+								<?php echo mb_substr(get_the_excerpt(), 0, 	50, 'UTF-8'); ?> ...				
 							</a>
 						</div>
 					</div>
@@ -234,6 +255,7 @@
 			</div><!--close review_col-->
 		</div><!--close main_middle-->
 		<div class="clear"></div>	
+		
 		<div id="main_low">
 			<div id="low_col1">
 				<div id="mailing">
@@ -245,20 +267,21 @@
 					</div>
 				</div>
 				<div id="book">
-					<?php do_action('slideshow_deploy', '19'); ?>
+					<?php do_action('slideshow_deploy', '5'); ?>
 				</div>
 			</div>
 			<div id="low_col2">
 				<div id="notice">
 					<div class="title-box">
 						<div class="title">
-							<h3>공지사항</h3><span class="more">+</span>
+							<h3>공지사항</h3>
+							<a href="<?php echo getNoticePageURL() ?>" ><span class="more">+</span></a>
 						</div>
 					</div>
 					<div class="post-title-list">
 						<?php
 						$args = array(
-								'cat' => getNoticeCategoryNum(),
+								'cat' => getMainNoticeCategoryNum(),
 								'posts_per_page' => 4,
 								);
 						$custom_query = new WP_Query($args);
@@ -266,20 +289,18 @@
 							$id = get_the_ID();
 						?>
 						<div class="title_row"> 
-							<div class="post-title"> 
-								<h3>∙ 
-									<a href="<?php echo get_permalink($id) ?>" title="<?php the_title(); ?>" >
-										<?php 
-											$len = mb_strlen(get_the_title(), "UTF-8");
-											if($len > 16) {
-												echo mb_substr(get_the_title(), 0, 16, 'UTF-8');
-												echo "...";
-											} 
-											else
-												echo get_the_title();
-										?>
-									</a>
-								</h3>
+							<div class="post-title">∙
+								<a href="<?php echo get_permalink($id) ?>" title="<?php the_title(); ?>" >
+									<?php 
+										$len = mb_strlen(get_the_title(), "UTF-8");
+										if($len > 16) {
+											echo mb_substr(get_the_title(), 0, 16, 'UTF-8');
+											echo "...";
+										} 
+										else
+											echo get_the_title();
+									?>
+								</a>
 							</div>
 							<div class="date">
 								<?php the_time('Y/m/d') ?>
@@ -293,14 +314,15 @@
 				<div id="news">
 					<div class="title-box">
 						<div class="title">
-							<h3>연구소 뉴스</h3><span class="more">+</span>
+							<h3>연구소 뉴스</h3>
+							<a href="<?php echo getNewsPageURL() ?>" ><span class="more">+</span></a>
 						</div>
 					</div>
 					
 					<div class="post-title-list">
 						<?php
 						$args = array(
-								'cat' => getNewsCategoryNum(),
+								'cat' => getMainNewsCategoryNum(),
 								'posts_per_page' => 4,
 								);
 						$custom_query = new WP_Query($args);
@@ -308,8 +330,7 @@
 							$id = get_the_ID();
 						?>
 						<div class="title_row"> 
-							<div class="post-title"> 
-								∙ 
+							<div class="post-title">∙  
 								<a href="<?php echo get_permalink($id) ?>" title="<?php the_title(); ?>" >
 									<?php 
 										$len = mb_strlen(get_the_title(), "UTF-8");
@@ -337,24 +358,24 @@
 				<div class="fb-like-box" data-href="https://www.facebook.com/landliberty" data-width="332" data-height="370" data-show-faces="false" data-stream="true" data-show-border="false" data-header="true"></div>
 			</div>
 		</div><!--close main_low-->
+		<div class="clear"></div>
 		
 		<div id="family">
 			<div id="family-label">
 				<span>관련단체</span>
 			</div>
 			<div class="family-ban">
-				<a href="http://www.landliberty.org" target="_blank"><img src='<?php bloginfo('template_url'); ?>/images/family1.gif' alt='희년함께'></a>
+				<a href="http://www.hananuri.org" target="_blank"><img src='<?php bloginfo('template_url'); ?>/images/family4.gif' alt='하나누리'></a>
 			</div>
 			<div class="family-ban">
-				<a href="http://www.lincolninst.edu" target="_blank"><img src='<?php bloginfo('template_url'); ?>/images/family2.gif' alt='링컨토지정책연구소'></a>
+				<a href="http://www.landliberty.org" target="_blank"><img src='<?php bloginfo('template_url'); ?>/images/family1.gif' alt='희년함께'></a>
 			</div>
 			<div class="family-ban">
 				<a href="http://www.landjustice.or.kr" target="_blank"><img src='<?php bloginfo('template_url'); ?>/images/family3.gif' alt='토지정의시민연대'></a>
 			</div>
 			<div class="family-ban">
-				<a href="http://www.hananuri.org" target="_blank"><img src='<?php bloginfo('template_url'); ?>/images/family4.gif' alt='하나누리'></a>
+				<a href="http://www.lincolninst.edu" target="_blank"><img src='<?php bloginfo('template_url'); ?>/images/family2.gif' alt='링컨토지정책연구소'></a>
 			</div>
 		</div>
-		
 	</div><!--close main-->
 <?php get_footer() ?>							

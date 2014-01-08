@@ -23,7 +23,7 @@ get_header(); ?>
 			</div>
 			<div class="subpage">
 				<div class="sub-title-bar">
-					<span class="subpage-title">영상자료</span><span class="subpage-title-detail">영상자료 상세하게</span>
+					<span class="subpage-title">영상자료</span><span class="subpage-title-detail"></span>
 					<img class="sub-title-icon" src='<?php bloginfo('template_url'); ?>/images/sub/sub_t_img.gif' >
 				</div>
 				
@@ -53,15 +53,20 @@ get_header(); ?>
 							<div class="picture">
 								<a href="<?php echo get_permalink($id) ?>" title="<?php the_title(); ?>" >
 									<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($id), 'excerpt-thumbnail');
-										$url = $thumb['0'];
+										$thumb_img_url = $thumb['0'];
+										$first_img_url = catch_that_image();
+										if($thumb_img_url == "none")
+											$url = $first_img_url;
+										else 
+											$url = $thumb_img_url;
 									?>		
-									<img width=200 height=150 src=<?= $url ?>>
+									<img width=200 height=150 src=<?php echo $url; ?>>
 								</a>
 							</div>
 							<div class="pic_title">
 								<a href="<?php echo get_permalink($id) ?>" title="<?php the_title(); ?>" >
-								<?php 
-								/*
+								<?php
+								/* 
 									$len = mb_strlen(get_the_title(), "UTF-8");
 									if($len > 10) {
 										echo mb_substr(get_the_title(), 0, 10, 'UTF-8');

@@ -23,7 +23,7 @@ get_header(); ?>
 			</div>
 			<div class="subpage">
 				<div class="sub-title-bar-noborder">
-					<span class="subpage-title">공지사항</span><span class="subpage-title-detail">공지사항 자세하게...</span>
+					<span class="subpage-title">공지사항</span><span class="subpage-title-detail"></span>
 					<img class="sub-title-icon" src='<?php bloginfo('template_url'); ?>/images/sub/sub_t_img.gif' >
 				</div>
 				
@@ -31,7 +31,6 @@ get_header(); ?>
 					
 					<div class="board">
 						<div class="board-meta-bar">
-							<span class="num">번호</span>
 							<span class="title">제목</span>
 							<span class="writer">글쓴이</span>
 							<span class="count">조회수</span>
@@ -51,15 +50,12 @@ get_header(); ?>
 							$id = get_the_ID();
 						?>
 						<div class="list-row">
-							<div class="num">
-								공지
-							</div>
-							<div class="title">
+							<div class="title title-fix">
 								<a href="<?php echo get_permalink($id) ?>" title="<?php the_title(); ?>" >
 									<?php 
 										$len = mb_strlen(get_the_title(), "UTF-8");
-										if($len > 50) {
-											echo mb_substr(get_the_title(), 0, 50, 'UTF-8');
+										if($len > 35) {
+											echo mb_substr(get_the_title(), 0, 35, 'UTF-8');
 											echo "...";
 										} 
 										else
@@ -102,19 +98,17 @@ get_header(); ?>
 							$id = get_the_ID();
 						?>
 						<div class="list-row">
-							<div class="num">
-								<?php echo $id; ?>
-							</div>
 							<div class="title">
 								<a href="<?php echo get_permalink($id) ?>" title="<?php the_title(); ?>" >
-									<?php 
-										$len = mb_strlen(get_the_title(), "UTF-8");
-										if($len > 50) {
-											echo mb_substr(get_the_title(), 0, 50, 'UTF-8');
+									<?php
+										$title = get_the_title(); 
+										$len = mb_strlen($title, "UTF-8");
+										if($len > 36) {
+											echo mb_substr($title, 0, 36, "UTF-8");
 											echo "...";
 										} 
 										else
-											echo get_the_title();
+											echo $title;
 									?>
 								</a>
 							</div>

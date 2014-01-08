@@ -1,6 +1,6 @@
 <?php 
 /**
- * Template Name: Page2 Report Page
+ * Template Name: Page2 Study Page
  *
  * A custom page template with sidebar.
  * 
@@ -11,22 +11,22 @@
  */
 get_header(); ?>
 
-	<div class="subpage_stretched">
+<div class="subpage_stretched">
 	<?php include (TEMPLATEPATH . '/nav.php'); ?> 
 	<div class="subpage_fixed">
 		<?php include (TEMPLATEPATH . '/sidebar.php'); ?> 
 		<div id="content-panel">
 			<div class="breadcrumb">
 				<p>
-					<img src='<?php bloginfo('template_url'); ?>/images/sub/icon_home.gif'> 홈 > 연구활동 > <span>토지+자유 리포트</span>
+					<img src='<?php bloginfo('template_url'); ?>/images/sub/icon_home.gif'> 홈 > 연구활동 > <span>토지+자유 연구</span>
 				</p>
 			</div>
 			<div class="subpage">
 				<div class="sub-title-bar">
-					<span class="subpage-title">토지+자유 리포트</span><span class="subpage-title-detail">Land and Liberty Report</span>
+					<span class="subpage-title">토지+자유 연구</span><span class="subpage-title-detail">Land and Liberty Studies</span>
 					<img class="sub-title-icon" src='<?php bloginfo('template_url'); ?>/images/sub/sub_t_img.gif' >
 				</div>
-				
+					
 				<div class="content">
 					<?php
 					if ( get_query_var('paged') ) {
@@ -38,7 +38,7 @@ get_header(); ?>
 	                }
 					
 					query_posts(array(
-						'cat' => getReportCategoryNum(),
+						'cat' => getStudyCategoryNum(),
 						'posts_per_page' => 5,
 						'paged' => $paged
 						)					
@@ -66,8 +66,8 @@ get_header(); ?>
 							<a href="<?php echo get_permalink($id) ?>" title="<?php the_title(); ?>" >
 								<?php 
 									$len = mb_strlen(get_the_title(), "UTF-8");
-									if($len > 60) {
-										echo mb_substr(get_the_title(), 0, 60, 'UTF-8');
+									if($len > 50) {
+										echo mb_substr(get_the_title(), 0, 50, 'UTF-8');
 										echo "...";
 									} 
 									else

@@ -23,7 +23,7 @@ get_header(); ?>
 			</div>
 			<div class="subpage">
 				<div class="sub-title-bar">
-					<span class="subpage-title">대외활동</span><span class="subpage-title-detail">대외활동 상세하게</span>
+					<span class="subpage-title">대외활동</span><span class="subpage-title-detail"></span>
 					<img class="sub-title-icon" src='<?php bloginfo('template_url'); ?>/images/sub/sub_t_img.gif' >
 				</div>
 				
@@ -32,7 +32,21 @@ get_header(); ?>
 						<ul>
 							<li id="cat-total">
 								<a href="?cat=default"><span>전체</span></a>
-								(<?php $category = get_category_by_slug( 'activities' ); echo $category->count; ?>)
+								(<?php 
+									$category = get_category_by_slug( 'scholar' ); 
+									$tot =  $category->count; 
+									$category = get_category_by_slug( 'field' ); 
+									$tot +=  $category->count; 
+									$category = get_category_by_slug( 'discuss' ); 
+									$tot +=  $category->count; 
+									$category = get_category_by_slug( 'interview' ); 
+									$tot +=  $category->count;
+									$category = get_category_by_slug( 'lecture' ); 
+									$tot +=  $category->count;
+									$category = get_category_by_slug( 'etc' ); 
+									$tot +=  $category->count; 
+									echo $tot;
+								?>)
 							|</li>
 							<li id="cat-1">
 								<a href="?cat=scholar">학술활동</a>
@@ -49,12 +63,20 @@ get_header(); ?>
 							<li id="cat-4">
 								<a href="?cat=interview">인터뷰</a>
 								(<? $category = get_category_by_slug( 'interview' ); echo $category->count; ?>)
+							|</li>
+							<li id="cat-5">
+								<a href="?cat=lecture">강의</a>
+								(<? $category = get_category_by_slug( 'lecture' ); echo $category->count; ?>)
+							|</li>
+							<li id="cat-6">
+								<a href="?cat=etc">기타</a>
+								(<? $category = get_category_by_slug( 'etc' ); echo $category->count; ?>)
 							</li>
 						</ul>
 					</div>
-					<div class="board">
+					<div class="cat-board">
 						<div class="board-meta-bar">
-							<span class="num">번호</span>
+							<span class="cat">분류</span>
 							<span class="title">제목</span>
 							<span class="writer">글쓴이</span>
 							<span class="count">조회수</span>
@@ -103,6 +125,22 @@ get_header(); ?>
 								)					
 							);
 						}
+						else if( $cat ==  'lecture' ) {
+							query_posts(array(
+								'cat' => getLectureCategoryNum(),
+								'posts_per_page' => 10,
+								'paged' => $paged
+								)					
+							);
+						}
+						else if( $cat ==  'etc' ) {
+							query_posts(array(
+								'cat' => getEtcCategoryNum(),
+								'posts_per_page' => 10,
+								'paged' => $paged
+								)					
+							);
+						}
 						else {
 							query_posts(array(
 								'cat' => getActivitiesCategoryNum(),
@@ -118,19 +156,30 @@ get_header(); ?>
 							$id = get_the_ID();
 						?>
 						<div class="list-row">
-							<div class="num">
-								<?php echo $id; ?>
+							<div class="cat">
+								<?php
+									$category = get_the_category();
+									if($category[1]->cat_ID != null){
+										if($category[1]->cat_ID < 31)
+											echo $category[1]->cat_name;
+										else
+											echo $category[0]->cat_name;
+									}
+									else										
+										echo $category[0]->cat_name;
+								?>
 							</div>
 							<div class="title">
 								<a href="<?php echo get_permalink($id) ?>" title="<?php the_title(); ?>" >
-									<?php 
-										$len = mb_strlen(get_the_title(), "UTF-8");
-										if($len > 50) {
-											echo mb_substr(get_the_title(), 0, 50, 'UTF-8');
+									<?php
+										$title = get_the_title(); 
+										$len = mb_strlen($title, "UTF-8");
+										if($len > 28) {
+											echo mb_substr($title, 0, 28, "UTF-8");
 											echo "...";
 										} 
 										else
-											echo get_the_title();
+											echo $title;
 									?>
 								</a>
 							</div>
