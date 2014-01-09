@@ -46,6 +46,7 @@
 							<a href="<?php echo get_permalink($id) ?>" title="<?php the_title(); ?>" >
 								<?php 
 									$len = mb_strlen(get_the_title(), "UTF-8");
+									
 									if($len > 32) {
 										echo mb_substr(get_the_title(), 0, 32, 'UTF-8');
 										echo "...";
@@ -94,16 +95,8 @@
 					?>
 					<div class="news_row">
 						<h3>
-							<a href="<?php echo get_permalink($id) ?>" title="<?php the_title(); ?>" >
-								<?php 
-									$len = mb_strlen(get_the_title(), "UTF-8");
-									if($len > 24) {
-										echo mb_substr(get_the_title(), 0, 24, 'UTF-8');
-										echo "...";
-									} 
-									else
-										echo get_the_title();
-								?>
+							<a class="ellipsis" href="<?php echo get_permalink($id) ?>" title="<?php the_title(); ?>" >
+								<?php echo get_the_title();	?>
 							</a>
 						</h3>
 						<div class="news_img">
@@ -154,17 +147,9 @@
 						$id = get_the_ID();
 					?>
 					<div class="news_row">
-						<h3>
-							<a href="<?php echo get_permalink($id) ?>" title="<?php the_title(); ?>" >
-								<?php 
-									$len = mb_strlen(get_the_title(), "UTF-8");
-									if($len > 24) {
-										echo mb_substr(get_the_title(), 0, 24, 'UTF-8');
-										echo "...";
-									} 
-									else
-										echo get_the_title();
-								?>
+						<h3 >
+							<a class="ellipsis" href="<?php echo get_permalink($id) ?>" title="<?php the_title(); ?>" >
+								<?php echo get_the_title(); ?>
 							</a>
 						</h3>
 						<div class="news_img">
@@ -214,16 +199,8 @@
 					?>
 					<div class="news_row">
 						<h3>
-							<a href="<?php echo get_permalink($id) ?>" title="<?php the_title(); ?>" >
-								<?php 
-									$len = mb_strlen(get_the_title(), "UTF-8");
-									if($len > 24) {
-										echo mb_substr(get_the_title(), 0, 24, 'UTF-8');
-										echo "...";
-									} 
-									else
-										echo get_the_title();
-								?>
+							<a class="ellipsis" href="<?php echo get_permalink($id) ?>" title="<?php the_title(); ?>" >
+								<?php echo get_the_title(); ?>
 							</a>
 						</h3>
 						<div class="news_img">
@@ -290,16 +267,8 @@
 						?>
 						<div class="title_row"> 
 							<div class="post-title">∙
-								<a href="<?php echo get_permalink($id) ?>" title="<?php the_title(); ?>" >
-									<?php 
-										$len = mb_strlen(get_the_title(), "UTF-8");
-										if($len > 16) {
-											echo mb_substr(get_the_title(), 0, 16, 'UTF-8');
-											echo "...";
-										} 
-										else
-											echo get_the_title();
-									?>
+								<a class="ellipsis" href="<?php echo get_permalink($id) ?>" title="<?php the_title(); ?>" >
+									<?php echo get_the_title(); ?>
 								</a>
 							</div>
 							<div class="date">
@@ -331,16 +300,8 @@
 						?>
 						<div class="title_row"> 
 							<div class="post-title">∙  
-								<a href="<?php echo get_permalink($id) ?>" title="<?php the_title(); ?>" >
-									<?php 
-										$len = mb_strlen(get_the_title(), "UTF-8");
-										if($len > 16) {
-											echo mb_substr(get_the_title(), 0, 16, 'UTF-8');
-											echo "...";
-										} 
-										else
-											echo get_the_title();
-									?>
+								<a class="ellipsis" href="<?php echo get_permalink($id) ?>" title="<?php the_title(); ?>" >
+									<?php echo get_the_title(); ?>
 								</a>
 							</div>
 							<div class="date">

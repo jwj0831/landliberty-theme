@@ -67,7 +67,7 @@ get_header(); ?>
 								<?php 
 									$len = mb_strlen(get_the_title(), "UTF-8");
 									if($len > 50) {
-										echo mb_substr(get_the_title(), 0, 50, 'UTF-8');
+										echo mb_substr(get_the_title(), 0, 50);
 										echo "...";
 									} 
 									else

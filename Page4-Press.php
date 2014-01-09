@@ -49,17 +49,9 @@ get_header(); ?>
 							$id = get_the_ID();
 						?>
 						<div class="list-row">
-							<div class="title title-fix">
+							<div class="title title-fix ellipsis">
 								<a href="<?php echo get_permalink($id) ?>" title="<?php the_title(); ?>" >
-									<?php 
-										$len = mb_strlen(get_the_title(), "UTF-8");
-										if($len > 35) {
-											echo mb_substr(get_the_title(), 0, 35, 'UTF-8');
-											echo "...";
-										} 
-										else
-											echo get_the_title();
-									?>
+									<?php echo get_the_title(); ?>
 								</a>
 							</div>
 							<div class="writer">
@@ -99,17 +91,9 @@ get_header(); ?>
 						?>
 					
 						<div class="list-row">
-							<div class="title">
+							<div class="title ellipsis">
 								<a href="<?php echo get_permalink($id) ?>" title="<?php the_title(); ?>" >
-									<?php 
-										$len = mb_strlen(get_the_title(), "UTF-8");
-										if($len > 35) {
-											echo mb_substr(get_the_title(), 0, 35, 'UTF-8');
-											echo "...";
-										} 
-										else
-											echo get_the_title();
-									?>
+									<?php echo get_the_title(); ?>
 								</a>
 							</div>
 							<div class="writer">
@@ -129,7 +113,6 @@ get_header(); ?>
 						<div class="news_nav">
 							<?php wp_pagenavi(); ?>
 						</div>
-						
 						
 					</div><!--close board-->
 				</div> <!--close content-->

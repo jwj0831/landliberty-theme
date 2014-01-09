@@ -156,7 +156,7 @@ get_header(); ?>
 							$id = get_the_ID();
 						?>
 						<div class="list-row">
-							<div class="cat">
+							<div class="cat ellipsis">
 								<?php
 									$category = get_the_category();
 									if($category[1]->cat_ID != null){
@@ -169,18 +169,9 @@ get_header(); ?>
 										echo $category[0]->cat_name;
 								?>
 							</div>
-							<div class="title">
+							<div class="title ellipsis">
 								<a href="<?php echo get_permalink($id) ?>" title="<?php the_title(); ?>" >
-									<?php
-										$title = get_the_title(); 
-										$len = mb_strlen($title, "UTF-8");
-										if($len > 28) {
-											echo mb_substr($title, 0, 28, "UTF-8");
-											echo "...";
-										} 
-										else
-											echo $title;
-									?>
+									<?php echo get_the_title(); ?>
 								</a>
 							</div>
 							<div class="writer">

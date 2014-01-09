@@ -125,6 +125,12 @@ a img.aligncenter {
 	padding: 0 4px 5px;
 }
 
+.ellipsis {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow:ellipsis;
+}
+
 /*
  *  Header Part CSS
  */
@@ -193,7 +199,7 @@ header {
 
 #menu {
 	width: 100%;
-	font-size: 0px;
+	/*font-size: 0px;*/
 }
 
 #menu nav {
@@ -215,7 +221,7 @@ header {
 }
 
 #menu nav ul li .menu_item {
-	font-size: 17px;
+	/*font-size: 17px;*/
 	font-weight: bold;
 	color: #000;
 	margin-left: 53px;
@@ -566,11 +572,16 @@ aside li a span {
 	display: inline-block;
 	border-bottom: 1px dashed #dddddd;
 }
+.front-col-content h3 {
+	width: 310px;
+}
 
 .front-col-content h3 a {
 	font-size: 14px;
 	color: #000;
 	font-weight: bold;
+	display: block;
+	width: 280px;
 }
 
 .front-col-content .news_img {
@@ -754,6 +765,8 @@ aside li a span {
 .post-title-list .post-title a {
 	color: #777777;
 	font-size: 13px;
+	display: inline-block;
+	width: 200px;
 }
 
 .post-title-list .date {
