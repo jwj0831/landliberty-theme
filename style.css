@@ -406,7 +406,7 @@ aside li a span {
 	color: #ffffff
 }
 
-#intro li #left1_1, #history li #left1_2, #people li #left1_3, #location li #left1_4, #notice li #left1_5, #research li #left2_1, #report li #left2_2, #review li #left2_3, #column li #left3_1, #story li #left3_2, #news li #left3_3, #press li #left4_1, #event li #left4_2, #activities li #left4_3, #data li #left5_1, #policy li #left5_2, #picture li #left5_3, #movie li #left5_4, #book li #left5_5, #guide li #left6_1, #finance li #left6_2, aside li a:hover {
+#intro li #left1_1, #history li #left1_2, #people li #left1_3, #location li #left1_4, #notice li #left1_5, #research li #left2_1, #report li #left2_2, #review li #left2_3, #column li #left2_4, #press-contribution li #left3_1, #story li #left3_2, #news li #left3_3, #press li #left4_1, #event li #left4_2, #activities li #left4_3, #data li #left5_1, #policy li #left5_2, #picture li #left5_3, #movie li #left5_4, #book li #left5_5, #guide li #left6_1, #finance li #left6_2, aside li a:hover {
 	background: url('images/left/left_r_bg.gif') no-repeat;
 }
 

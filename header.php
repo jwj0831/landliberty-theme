@@ -33,26 +33,26 @@
 				?>
 			</title>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-	<script type="text/javascript" language="javascript">
-	   $(document).ready(function() {
-	
-	     $('#menu').hover(
-	         function () {
-	           //$('#submenu').css({"display":"block"});
-	           $('#submenu').show();
-	         }, 
-	         function () {
-	           $('#submenu').css({"display":"none"});
-	          //var timer = setTimeout(function(){$('#submenu').hide();}, 2500);
-	         }
-	     );
-	
-	   });
-	   $(document).ready(function(){ 
-    		$("#smooth_slider_1").css('background-image', 'url("http://landliberty13.cafe24.com/eocjsejr/wp-content/themes/landliberty_v1/images/slide_text_bg.gif")' );
-    		$("#smooth_slider_1").css('background-repeat', 'none');
-    		$("#smooth_slider_1").css('background-position', 'right top');
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#menu').hover(
+	        	function () {
+	           		$('#submenu').show();
+	         	},
+	         	function () {
+	           		$('#submenu').css({"display":"none"});
+	         	}
+	     	);
+	     	
+	     	$("#smooth_slider_1").css('background-image', 'url("http://landliberty13.cafe24.com/eocjsejr/wp-content/themes/landliberty_v1/images/slide_text_bg.gif")' );
+		 	$("#smooth_slider_1").css('background-repeat', 'none');
+			$("#smooth_slider_1").css('background-position', 'right top');
 		});
+		$("#cat-total").click(function() {
+			alert("hello");
+			$(".board-category-li").children("a").children("span").css('font-weight','normal');
+		});
+
    </script>
 	
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
@@ -151,11 +151,12 @@
 									<li><a id="header_menu2_sub1" href="<?php echo home_url()?>/researches/study"><span>토지+자유 연구</span></a></li>
 									<li><a id="header_menu2_sub2" href="<?php echo home_url()?>/researches/report"><span>토지+자유 리포트</span></a></li>
 									<li><a id="header_menu2_sub3" href="<?php echo home_url()?>/researches/review"><span>토지+자유 비평</span></a></li>
+									<li><a id="header_menu2_sub4" href="<?php echo home_url()?>/researches/column"><span>토지+자유 칼럼</span></a></li>
 								</ul>
 							</div>
 							<div id="sub3" class="submenu-class">
 								<ul id="submenu3">
-									<li><a id="header_menu3_sub1" href="<?php echo home_url()?>/magazine/column"><span>칼럼</span></a></li>
+									<li><a id="header_menu3_sub1" href="<?php echo home_url()?>/magazine/press"><span>언론기고</span></a></li>
 									<li><a id="header_menu3_sub2" href="<?php echo home_url()?>/magazine/story"><span>연구소 이야기</span></a></li>
 									<li><a id="header_menu3_sub3" href="<?php echo home_url()?>/magazine/news"><span>연구소 소식</span></a></li>
 								</ul>

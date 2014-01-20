@@ -1,6 +1,6 @@
 <?php 
 /**
- * Template Name: Page3 Column Page
+ * Template Name: Page3 Press Contribution Page
  *
  * A custom page template with sidebar.
  * 
@@ -18,12 +18,12 @@ get_header(); ?>
 		<div id="content-panel">
 			<div class="breadcrumb">
 				<p>
-					<img src='<?php bloginfo('template_url'); ?>/images/sub/icon_home.gif'> 홈 > 매거진 > <span>칼럼</span>
+					<img src='<?php bloginfo('template_url'); ?>/images/sub/icon_home.gif'> 홈 > 매거진 > <span>언론기고</span>
 				</p>
 			</div>
 			<div class="subpage">
 				<div class="sub-title-bar">
-					<span class="subpage-title">칼럼</span><span class="subpage-title-detail"></span>
+					<span class="subpage-title">언론기고</span><span class="subpage-title-detail"></span>
 					<img class="sub-title-icon" src='<?php bloginfo('template_url'); ?>/images/sub/sub_t_img.gif' >
 				</div>
 				
@@ -38,7 +38,7 @@ get_header(); ?>
 	                }
 					
 					query_posts(array(
-						'cat' => getColumnCategoryNum(),
+						'cat' => getPressContCategoryNum(),
 						'posts_per_page' => 5,
 						'paged' => $paged
 						)					

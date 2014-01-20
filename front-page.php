@@ -12,15 +12,15 @@
 				<div id="column">
 					<div class="column-title-box">
 						<div class="title">
-							<img src='<?php bloginfo('template_url'); ?>/images/icon_column.gif' alt='칼럼'>
-							<span id="column-label">칼럼</span>
-							<a href="<?php echo getColumnPageURL() ?>" ><span class="more">+</span></a>
+							<img src='<?php bloginfo('template_url'); ?>/images/icon_column.gif' alt='언론기고'>
+							<span id="column-label">언론기고</span>
+							<a href="<?php echo getPressContPageURL() ?>" ><span class="more">+</span></a>
 						</div>
 					</div>
 					<div id="column-content">
 						<?php
 						$args = array(
-								'cat' => getColumnCategoryNum(),
+								'cat' => getPressContCategoryNum(),
 								'posts_per_page' => 1,
 								);
 						

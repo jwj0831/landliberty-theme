@@ -31,7 +31,7 @@ get_header(); ?>
 					
 					<div class="cat-bar">
 						<ul>
-							<li id="cat-total">
+							<li class="board-category-li" id="cat-total">
 								<a href="?cat=default"><span>전체</span></a>
 								(<?php 
 									$category = get_category_by_slug( 'tax' ); 
@@ -49,28 +49,28 @@ get_header(); ?>
 									echo $tot;
 								?>)
 							|</li>
-							<li id="cat-1">
-								<a href="?cat=tax">조세재정</a>
+							<li class="board-category-li" id="cat-tax">
+								<a href="?cat=tax"><span>조세재정</span></a>
 								(<?php $category = get_category_by_slug( 'tax' ); echo $category->count; ?>)
 							|</li>
-							<li id="cat-2">
-								<a href="?cat=city">도시재생</a>
+							<li class="board-category-li" id="cat-city">
+								<a href="?cat=city"><span>도시재생</span></a>
 								(<?php $category = get_category_by_slug( 'city' ); echo $category->count; ?>)	
 							|</li>
-							<li id="cat-3">
-								<a href="?cat=north">통일북한</a>
+							<li class="board-category-li" id="cat-north">
+								<a href="?cat=north"><span>통일북한</span></a>
 								(<?php $category = get_category_by_slug( 'north' ); echo $category->count; ?>)
 							|</li>
-							<li id="cat-4">
-								<a href="?cat=alternative">대안체제</a>
+							<li class="board-category-li" id="cat-alter">
+								<a href="?cat=alternative"><span>대안체제</span></a>
 								(<?php $category = get_category_by_slug( 'alternative' ); echo $category->count; ?>)
 							|</li>
-							<li id="cat-4">
-								<a href="?cat=justice">사회정의론</a>
+							<li class="board-category-li" id="cat-justice">
+								<a href="?cat=justice"><span>사회정의론</span></a>
 								(<?php $category = get_category_by_slug( 'justice' ); echo $category->count; ?>)
 							|</li>
-							<li id="cat-4">
-								<a href="?cat=etc2">기타</a>
+							<li class="board-category-li" id="cat-etc">
+								<a href="?cat=etc2"><span>기타</span></a>
 								(<?php $category = get_category_by_slug( 'etc2' ); echo $category->count; ?>)
 							</li>
 						</ul>

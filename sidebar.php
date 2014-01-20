@@ -38,8 +38,12 @@
 <?php 
 	}
 	else if( is_page( getResearchActivityPageNum() ) or is_page( getStudyPageNum() ) or 
-		is_page( getReportPageNum() ) or is_page( getReviewPageNum() ) or
-		in_category( array( getResearchActivityCategoryNum(), getStudyCategoryNum(), getReportCategoryNum(), getReviewCategoryNum() ) )
+		is_page( getReportPageNum() ) or is_page( getReviewPageNum() ) or 
+		is_page( getColumnPageNum() ) or
+		in_category( array( getResearchActivityCategoryNum(), getStudyCategoryNum(), 
+							getReportCategoryNum(), getReviewCategoryNum(), 
+							getColumnCategoryNum() 
+						) )
 	){
 		if( is_page( getResearchActivityPageNum() ) or is_page( getStudyPageNum() ) or in_category( array( getStudyCategoryNum() ) ) )
 			echo '<aside id="research">';
@@ -47,6 +51,8 @@
 			echo '<aside id="report">';
 		else if( is_page( getReviewPageNum() ) or in_category( array( getReviewCategoryNum() ) ) )
 			echo '<aside id="review">';
+		else if( is_page( getColumnPageNum() ) or in_category( array( getColumnCategoryNum() ) ) )
+			echo '<aside id="column">';
 ?>
 	<div class="side-title">
 		<span class="side-title-span">연구활동</span><span class="side-sub-title-span">Research Activities</span>
@@ -55,16 +61,19 @@
 		<li><a id="left2_1" href="<?php echo home_url() ?>/researches/study"><span>토지+자유 연구</span></a></li>
 		<li><a id="left2_2" href="<?php echo home_url() ?>/researches/report"><span>토지+자유 리포트</span></a></li>
 		<li><a id="left2_3" href="<?php echo home_url() ?>/researches/review"><span>토지+자유 비평</span></a></li>
+		<li><a id="left2_4" href="<?php echo home_url() ?>/researches/column"><span>토지+자유 칼럼</span></a></li>
 	</ul>
 	
 <?php 
 	}
-	else if( is_page( getMagazinePageNum() ) or is_page( getColumnPageNum() ) or 
+	else if( is_page( getMagazinePageNum() ) or is_page( getPressContPageNum() ) or 
 		is_page( getNewsPageNum() ) or is_page( getStoryPageNum() ) or
-		in_category( array( getMagazineCategoryNum(), getColumnCategoryNum(), getStoryCategoryNum(), getNewsCategoryNum() ) )
+		in_category( array( 
+			getMagazineCategoryNum(), getPressContCategoryNum(), 
+			getStoryCategoryNum(), getNewsCategoryNum() ) )
 	){
-		if( is_page( getMagazinePageNum() ) or is_page( getColumnPageNum() ) or in_category( array( getColumnCategoryNum() ) ) )
-			echo '<aside id="column">';
+		if( is_page( getMagazinePageNum() ) or is_page( getPressContPageNum() ) or in_category( array( getPressContCategoryNum() ) ) )
+			echo '<aside id="press-contribution">';
 		else if( is_page( getStoryPageNum() ) or in_category( array( getStoryCategoryNum() ) ) )
 			echo '<aside id="story">';
 		else if( is_page( getNewsPageNum() ) or in_category( array( getNewsCategoryNum() ) ) )
@@ -74,7 +83,7 @@
 		<span class="side-title-span">매거진</span><span class="side-sub-title-span">Magazine</span>
 	</div>
 	<ul>
-		<li><a id="left3_1" href="<?php echo home_url() ?>/magazine/column"><span>칼럼</span></a></li>
+		<li><a id="left3_1" href="<?php echo home_url() ?>/magazine/press"><span>언론기고</span></a></li>
 		<li><a id="left3_2" href="<?php echo home_url() ?>/magazine/story"><span>연구소 이야기</span></a></li>
 		<li><a id="left3_3" href="<?php echo home_url() ?>/magazine/news"><span>연구소 소식</span></a></li>
 	</ul>
@@ -100,7 +109,8 @@
 					array( getActivitiesCategoryNum(), getPressFixCategoryNum(), getScholarCategoryNum(),
 						getFieldCategoryNum(), getDiscussCategoryNum(),
 						getInterviewCategoryNum(), getLectureCategoryNum(),
-						getEtcCategoryNum()) ) 
+						getEtcCategoryNum() 
+						) ) 
 		)
 			echo '<aside id="activities">';
 ?>
@@ -180,6 +190,9 @@
 	</ul>
 
 <?php
+	}
+	else {
+		echo "Page Error";
 	}
 ?>
 	<img class="left_bottom" src='<?php bloginfo('template_url'); ?>/images/left/left_bottom.gif' >

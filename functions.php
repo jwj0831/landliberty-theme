@@ -51,7 +51,11 @@ function getParentCatID() {
 }
 
 function getColumnPageURL() {
-	return "http://landliberty.or.kr/magazine/column";
+	return "http://landliberty.or.kr/researches/column";
+}
+
+function getPressContPageURL() {
+	return "http://landliberty.or.kr/magazine/press";
 }
 
 function getDonationPageURL() {
@@ -110,9 +114,10 @@ function getResearchActivityPageNum() {return 15;}
 	function getStudyPageNum() {return 17;}
 	function getReportPageNum() {return 19;}
 	function getReviewPageNum() {return 21;}
+	function getColumnPageNum() {return 1507;}
 	
 function getMagazinePageNum() {return 23;}
-	function getColumnPageNum() {return 25;}
+	function getPressContPageNum() {return 25;}
 	function getStoryPageNum() {return 27;}
 	function getNewsPageNum() {return 29;}
 	
@@ -140,9 +145,10 @@ function getResearchActivityCategoryNum() {return 3;}
 	function getStudyCategoryNum() {return 4;}
 	function getReportCategoryNum() {return 5;}
 	function getReviewCategoryNum() {return 6;}
+	function getColumnCategoryNum() {return 56;}
 
 function getMagazineCategoryNum() {return 7;}
-	function getColumnCategoryNum() {return 8;}
+	function getPressContCategoryNum() {return 8;}
 	function getStoryCategoryNum() {return 9;}
 	function getNewsCategoryNum() {return 10;}
 
