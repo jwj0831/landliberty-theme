@@ -544,7 +544,7 @@ aside li a span {
 
 #main_middle #study_col {
 	display: inline-block;
-	width: 332px;
+	width: 498px;
 	background-color: #FFFFFF;
 	float: left;
 	border: 1px solid #cccccc;
@@ -552,28 +552,40 @@ aside li a span {
 
 #main_middle #report_col {
 	display: inline-block;
-	width: 332px;
+	width: 499px;
 	background-color: #FFFFFF;
 	border-top: 1px solid #cccccc;
+	border-right: 1px solid #cccccc;
 	border-bottom: 1px solid #cccccc;
 	float: left;
 }
 
 #main_middle #review_col {
 	display: inline-block;
-	width: 332px;
+	width: 498px;
 	background-color: #FFFFFF;
 	float: left;
-	border: 1px solid #cccccc;
+	border-left: 1px solid #cccccc;
+	border-right: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
+}
+
+#main_middle #column_col {
+	display: inline-block;
+	width: 499px;
+	background-color: #FFFFFF;
+	float: left;
+	border-right: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
 }
 
 .front-col-content .news_row {
-	padding: 30px 24px 29px 24px;
+	padding: 20px 20px 20px 20px;
 	display: inline-block;
 	border-bottom: 1px dashed #dddddd;
 }
 .front-col-content h3 {
-	width: 310px;
+	width: 456px;
 }
 
 .front-col-content h3 a {
@@ -581,7 +593,7 @@ aside li a span {
 	color: #000;
 	font-weight: bold;
 	display: block;
-	width: 280px;
+	width: 456px;
 }
 
 .front-col-content .news_img {
@@ -590,21 +602,23 @@ aside li a span {
 }
 
 .front-col-content .news_date {
-	font-size: 12px;
+	font-size: 13px;
 	color: #999999;
 	display: inline-block;
+	width: 323px;
+	float: left;
 	margin-top: 10px;
-	margin-left: 10px;
-	margin-bottom: 4px;
+	margin-left: 15px;
+	margin-bottom: 10px;
 }
 
 .front-col-content .news_text {
-	font-size: 12px;
+	font-size: 13px;
 	color: #999999;
 	display: inline-block;
-	margin-left: 10px;
+	margin-left: 15px;
 	float: left;
-	width: 190px;
+	width: 323px;
 	text-align: justify;
 }
 
@@ -640,6 +654,10 @@ aside li a span {
 
 #main_middle #col3 {
 	background-color: #CBDE2E;
+}
+
+#main_middle #col4 {
+	background-color: #B4B4B4;
 }
 
 #main_low {
@@ -1002,6 +1020,7 @@ aside li a span {
 	margin: 6px 0px;
 	display: inline-block;
 	text-align: center;
+	float: left;
 }
 
 .list-row .title {
@@ -1032,7 +1051,7 @@ aside li a span {
 }
 
 .cat-board .board-meta-bar .title, .cat-board .list-row .title {
-	width: 340px;
+	width: 380px;
 }
 
 .board .board-meta-bar .title {

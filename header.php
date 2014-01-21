@@ -2,6 +2,7 @@
 <html <?php language_attributes(); ?>>
 	<head>
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta property="og:image" content="<?php bloginfo('template_url'); ?>/images/thumbnail.jpg" />
 				
 		<?php $image = get_post_meta($post->ID, 'facebookimage', true);
