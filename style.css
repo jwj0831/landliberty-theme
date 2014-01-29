@@ -137,14 +137,17 @@ a img.aligncenter {
 
 #head-container {
 	width: 100%;
+	position: fixed;
+	z-index: 99;
+	background-color: #fff;
+	border-bottom: 2px solid #3A8AD4;
 }
 
 header {
 	width: 1000px;
-	height: 30px;
+	height: 14px;
 	margin: 0 auto;
 	margin-top: 12px;
-	margin-bottom: 12px;
 	font-size: 11px;
 	color: #c3c3c3;
 }
@@ -204,7 +207,6 @@ header {
 
 #menu nav {
 	width: 1000px;
-	height: 70px;
 	margin: 0 auto;
 }
 
@@ -295,7 +297,7 @@ header {
 #float_nav {
 	position: fixed;
 	left: 50%;
-	margin: 30px 0 0 510px;
+	margin: 0px 0 0 510px;
 	font-size: 0px;
 }
 #float-hat {
@@ -356,7 +358,6 @@ footer #footer_line .org_info address {
  */
 
 aside {
-	margin-top: 30px;
 	width: 167px;
 	display: inline;
 	float: left;
@@ -424,15 +425,14 @@ aside li a span {
 	position: relative;
 	background-image: url('images/bg.gif');
 	background-repeat: repeat;
-	/*margin-top: 25px; temp-nav */
-	border-top: 2px solid #3A8AD4;
 	padding-bottom: 10px;
+	padding-top: 126px;
 }
 
 #main_top {
 	width: 1002px;
 	height: 302px;
-	margin: 30px auto 0px auto;
+	margin: 0px auto 0px auto;
 	font-size: 0px;
 }
 
@@ -526,7 +526,22 @@ aside li a span {
 	display: inline-block;
 	margin-right: 25px;
 	float: right;
-	font-size: 16px;
+	font-size: 25px;
+	font-weight: bold;
+	line-height:15px;	
+	color:#ffffff
+
+}
+
+.smore {
+	display: inline-block;
+	margin-right: 25px;
+	float: right;
+	font-size: 20px;
+	font-weight: bold;
+	line-height:15px;	
+	color:#9d9d9d
+
 }
 
 #main_top #support_ban {
@@ -841,9 +856,8 @@ aside li a span {
 	position: relative;
 	background-image: url('images/bg.gif');
 	background-repeat: repeat;
-	/*margin-top: 25px; temp-nav*/
-	border-top: 2px solid #3A8AD4;
 	padding-bottom: 25px;
+	padding-top: 126px;
 }
 
 .subpage_fixed {
@@ -852,7 +866,6 @@ aside li a span {
 }
 
 #content-panel {
-	margin-top: 30px;
 	width: 818px;
 	float: right;
 	border: 1px solid #cccccc;
