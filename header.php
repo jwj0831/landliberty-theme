@@ -157,6 +157,8 @@
 									<li><a id="header_menu2_sub2" href="<?php echo home_url()?>/researches/report"><span>토지+자유 리포트</span></a></li>
 									<li><a id="header_menu2_sub3" href="<?php echo home_url()?>/researches/review"><span>토지+자유 비평</span></a></li>
 									<li><a id="header_menu2_sub4" href="<?php echo home_url()?>/researches/column"><span>토지+자유 칼럼</span></a></li>
+									<li><a id="header_menu2_sub5" href="<?php echo home_url()?>/researches/korean-issue"><span>한반도 현안 톺아보기</span></a></li>
+									
 								</ul>
 							</div>
 							<div id="sub3" class="submenu-class">

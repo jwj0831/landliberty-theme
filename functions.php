@@ -50,10 +50,6 @@ function getParentCatID() {
 		return $category[0]->cat_ID;
 }
 
-function getColumnPageURL() {
-	return "http://landliberty.or.kr/researches/column";
-}
-
 function getPressContPageURL() {
 	return "http://landliberty.or.kr/magazine/press";
 }
@@ -62,16 +58,28 @@ function getDonationPageURL() {
 	return "http://landliberty.or.kr/support/guide";
 }
 
-function getStudyPageURL(){
-	return "http://landliberty.or.kr/research/study";
-}
-
-function getReportPageURL(){
-	return "http://landliberty.or.kr/research/report";
+function getColumnPageURL() {
+	return "http://landliberty.or.kr/researches/column";
 }
 
 function getReviewPageURL(){
-	return "http://landliberty.or.kr/research/review";
+	return "http://landliberty.or.kr/researches/review";
+}
+
+function getIssuePageURL(){
+	return "http://landliberty.or.kr/researches/korean-issue";
+}
+
+function getStudyPageURL(){
+	return "http://landliberty.or.kr/researches/study";
+}
+
+function getReportPageURL(){
+	return "http://landliberty.or.kr/researches/report";
+}
+
+function getStoryPageURL(){
+	return "http://landliberty.or.kr/magazine/story";
 }
 
 function getNoticePageURL(){
@@ -82,21 +90,6 @@ function getNewsPageURL(){
 	return "http://landliberty.or.kr/magazine/news";
 }
 
-
-/*
-function my_search_form( $form ) {
-    $form = '<form role="search" method="get" id="searchform" action="' . home_url( '/' ) . '" >
-    <div><label class="screen-reader-text" for="s">' . __( 'Search for:' ) . '</label>
-    <input type="text" value="' . get_search_query() . '" name="s" id="s" />
-    <input type="submit" id="searchsubmit" value="'. esc_attr__( 'Search' ) .'" />
-    </div>
-    </form>';
-
-    return $form;
-}
-
-add_filter( 'get_search_form', 'my_search_form' );
-*/
 
 /*
  * User Define Value Return Function for Land Liberty Theme
@@ -111,10 +104,11 @@ function getLandLibertyPageNum() {return 2;}
 	function getNoticePageNum() {return 13;}
 
 function getResearchActivityPageNum() {return 15;}
+	function getColumnPageNum() {return 1507;}
+	function getReviewPageNum() {return 21;}
+	function getIssuePageNum() {return 1844;}
 	function getStudyPageNum() {return 17;}
 	function getReportPageNum() {return 19;}
-	function getReviewPageNum() {return 21;}
-	function getColumnPageNum() {return 1507;}
 	
 function getMagazinePageNum() {return 23;}
 	function getPressContPageNum() {return 25;}
@@ -142,11 +136,12 @@ function getNoticeCategoryNum() {return 1;}
 	function getNoticeFixCategoryNum() {return 2;}
 
 function getResearchActivityCategoryNum() {return 3;}
+	function getColumnCategoryNum() {return 56;}
+	function getReviewCategoryNum() {return 6;}
+	function getIssueCategoryNum() {return 73;}
 	function getStudyCategoryNum() {return 4;}
 	function getReportCategoryNum() {return 5;}
-	function getReviewCategoryNum() {return 6;}
-	function getColumnCategoryNum() {return 56;}
-
+	
 function getMagazineCategoryNum() {return 7;}
 	function getPressContCategoryNum() {return 8;}
 	function getStoryCategoryNum() {return 9;}
@@ -232,9 +227,7 @@ function landliberty_widgets_init() {
 		'after_widget' => '</div>',
 		'before_title' => '<h3>',
 		'after_title' => '</h3>'
-	));
-	
-		
+	));		
 }
 
 add_action( 'widgets_init', 'landliberty_widgets_init' );

@@ -1,7 +1,7 @@
 <?php get_header() ?>
 <?php 
 // 전면 페이지의 기사문 자르기 위한 글자수 
-$news_text_str_num = 110; 
+$news_text_str_num = 55; 
 ?>
 
 	<div class="clear"></div>	
@@ -19,7 +19,7 @@ $news_text_str_num = 110;
 						<div class="title">
 							<img src='<?php bloginfo('template_url'); ?>/images/icon_column.gif' alt='언론기고'>
 							<span id="column-label">언론기고</span>
-							<a href="<?php echo getPressContPageURL() ?>" ><span  class="more" id="more-white-background">+</span></a>
+							<a href="<?php echo getPressContPageURL() ?>" ><span class="more">+</span></a>
 						</div>
 					</div>
 					<div id="column-content">
@@ -80,212 +80,12 @@ $news_text_str_num = 110;
 		<div class="clear"></div>
 		
 		<div id="main_middle">
-			<div id="study_col" class="middle-col">
-				<div id="col1" class="title-box">
-					<div class="title">
-						<h3>토지+자유 연구</h3>
-						<a href="<?php echo getStudyPageURL() ?>" ><span class="more">+</span></a>
-					</div>
-				</div>
-				<div class="front-col-content">
-					<?php
-					$args = array(
-							'cat' => getStudyCategoryNum(),
-							'posts_per_page' => 2,
-							);
-					
-					$custom_query = new WP_Query($args);
-					while($custom_query->have_posts()) : $custom_query->the_post();
-						$id = get_the_ID();
-					?>
-					<div class="news_row">
-						<h3>
-							<a class="ellipsis" href="<?php echo get_permalink($id) ?>" title="<?php the_title(); ?>" >
-								<?php echo get_the_title();	?>
-							</a>
-						</h3>
-						<div class="news_img">
-							<a href="<?php echo get_permalink($id) ?>" title="<?php the_title(); ?>" >
-								<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($id), 'excerpt-thumbnail');
-									$thumb_img_url = $thumb['0'];
-									$first_img_url = catch_that_image();
-									if($thumb_img_url == "none")
-										$url = $first_img_url;
-									else 
-										$url = $thumb_img_url;
-								?>		
-								<img width=120 height=95 src=<?php echo $url; ?>>
-							</a>
-						</div>
-						<div class="news_date">
-							<?php the_time('Y/m/d') ?>
-						</div>
-						
-						<div class="news_text">
-							<a href="<?php echo get_permalink($id) ?>" title="<?php the_title(); ?>" >
-								<?php echo mb_substr(get_the_excerpt(), 0, $news_text_str_num, 'UTF-8'); ?> ...				
-							</a>
-						</div>
-					</div>
-					
-					<?php endwhile; 
-					wp_reset_query(); ?>
-					
-				</div><!--close front_col-content-->
-			</div><!--close study_col-->
-			<div id="report_col" class="middle-col">
-				<div id="col2" class="title-box">
-					<div class="title">
-						<h3>토지+자유 리포트</h3>
-						<a href="<?php echo getReportPageURL() ?>" ><span class="more">+</span></a>
-					</div>
-				</div>
-				<div class="front-col-content">
-					<?php
-					$args = array(
-							'cat' => getReportCategoryNum(),
-							'posts_per_page' => 2,
-							);
-					
-					$custom_query = new WP_Query($args);
-					while($custom_query->have_posts()) : $custom_query->the_post();
-						$id = get_the_ID();
-					?>
-					<div class="news_row">
-						<h3 >
-							<a class="ellipsis" href="<?php echo get_permalink($id) ?>" title="<?php the_title(); ?>" >
-								<?php echo get_the_title(); ?>
-							</a>
-						</h3>
-						<div class="news_img">
-							<a href="<?php echo get_permalink($id) ?>" title="<?php the_title(); ?>" >
-								<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($id), 'excerpt-thumbnail');
-									$thumb_img_url = $thumb['0'];
-									$first_img_url = catch_that_image();
-									if($thumb_img_url == "none")
-										$url = $first_img_url;
-									else 
-										$url = $thumb_img_url;
-								?>		
-								<img width=120 height=95 src=<?php echo $url; ?>>
-							</a>
-						</div>
-						<div class="news_date">
-							<?php the_time('Y/m/d') ?>
-						</div>
-						
-						<div class="news_text">
-							<a href="<?php echo get_permalink($id) ?>" title="<?php the_title(); ?>" >
-								<?php echo mb_substr(get_the_excerpt(), 0, $news_text_str_num, 'UTF-8'); ?> ...				
-							</a>
-						</div>
-					</div>
-					<?php endwhile; 
-					wp_reset_query(); ?>
-				</div><!--close front_col-content-->
-			</div><!--close resport_col-->
-			<div id="review_col" class="middle-col">
-				<div id="col3"class="title-box">
-					<div class="title">
-						<h3>토지+자유 비평</h3>
-						<a href="<?php echo getReviewPageURL() ?>" ><span class="more">+</span></a>
-					</div>
-				</div>
-				<div class="front-col-content">
-					<?php
-					$args = array(
-							'cat' => getReviewCategoryNum(),
-							'posts_per_page' => 2,
-							);
-					
-					$custom_query = new WP_Query($args);
-					while($custom_query->have_posts()) : $custom_query->the_post();
-						$id = get_the_ID();
-					?>
-					<div class="news_row">
-						<h3>
-							<a class="ellipsis" href="<?php echo get_permalink($id) ?>" title="<?php the_title(); ?>" >
-								<?php echo get_the_title(); ?>
-							</a>
-						</h3>
-						<div class="news_img">
-							<a href="<?php echo get_permalink($id) ?>" title="<?php the_title(); ?>" >
-								<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($id), 'excerpt-thumbnail');
-									$thumb_img_url = $thumb['0'];
-									$first_img_url = catch_that_image();
-									if($thumb_img_url == "none")
-										$url = $first_img_url;
-									else 
-										$url = $thumb_img_url;
-								?>		
-								<img width=120 height=95 src=<?php echo $url; ?>>
-							</a>
-						</div>
-						<div class="news_date">
-							<?php the_time('Y/m/d') ?>
-						</div>
-						
-						<div class="news_text">
-							<a href="<?php echo get_permalink($id) ?>" title="<?php the_title(); ?>" >
-								<?php echo mb_substr(get_the_excerpt(), 0, 	$news_text_str_num, 'UTF-8'); ?> ...				
-							</a>
-						</div>
-					</div>
-					<?php endwhile; 
-					wp_reset_query(); ?>
-				</div><!--close front_col-content-->
-			</div><!--close review_col-->
-			<div id="column_col" class="middle-col">
-				<div id="col4"class="title-box">
-					<div class="title">
-						<h3>토지+자유 칼럼</h3>
-						<a href="<?php echo getColumnPageURL() ?>" ><span class="more">+</span></a>
-					</div>
-				</div>
-				<div class="front-col-content">
-					<?php
-					$args = array(
-							'cat' => getColumnCategoryNum(),
-							'posts_per_page' => 2,
-							);
-					
-					$custom_query = new WP_Query($args);
-					while($custom_query->have_posts()) : $custom_query->the_post();
-						$id = get_the_ID();
-					?>
-					<div class="news_row">
-						<h3>
-							<a class="ellipsis" href="<?php echo get_permalink($id) ?>" title="<?php the_title(); ?>" >
-								<?php echo get_the_title(); ?>
-							</a>
-						</h3>
-						<div class="news_img">
-							<a href="<?php echo get_permalink($id) ?>" title="<?php the_title(); ?>" >
-								<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($id), 'excerpt-thumbnail');
-									$thumb_img_url = $thumb['0'];
-									$first_img_url = catch_that_image();
-									if($thumb_img_url == "none")
-										$url = $first_img_url;
-									else 
-										$url = $thumb_img_url;
-								?>		
-								<img width=120 height=95 src=<?php echo $url; ?>>
-							</a>
-						</div>
-						<div class="news_date">
-							<?php the_time('Y/m/d') ?>
-						</div>
-						
-						<div class="news_text">
-							<a href="<?php echo get_permalink($id) ?>" title="<?php the_title(); ?>" >
-								<?php echo mb_substr(get_the_excerpt(), 0, 	$news_text_str_num, 'UTF-8'); ?> ...				
-							</a>
-						</div>
-					</div>
-					<?php endwhile; 
-					wp_reset_query(); ?>
-				</div><!--close front_col-content-->
-			</div><!--close review_col-->
+			<?php include (TEMPLATEPATH . '/front-page-col-box/column-box.php'); ?> 
+			<?php include (TEMPLATEPATH . '/front-page-col-box/review-box.php'); ?> 
+			<?php include (TEMPLATEPATH . '/front-page-col-box/issue-box.php'); ?> 
+			<?php include (TEMPLATEPATH . '/front-page-col-box/study-box.php'); ?> 
+			<?php include (TEMPLATEPATH . '/front-page-col-box/report-box.php'); ?> 
+			<?php include (TEMPLATEPATH . '/front-page-col-box/story-box.php'); ?> 
 		</div><!--close main_middle-->
 		<div class="clear"></div>	
 		
@@ -308,7 +108,7 @@ $news_text_str_num = 110;
 					<div class="title-box">
 						<div class="title">
 							<h3>공지사항</h3>
-							<a href="<?php echo getNoticePageURL() ?>" ><span class="smore">+</span></a>
+							<a href="<?php echo getNoticePageURL() ?>" ><span class="more">+</span></a>
 						</div>
 					</div>
 					<div class="post-title-list">
@@ -340,7 +140,7 @@ $news_text_str_num = 110;
 					<div class="title-box">
 						<div class="title">
 							<h3>연구소 뉴스</h3>
-							<a href="<?php echo getNewsPageURL() ?>" ><span class="smore">+</span></a>
+							<a href="<?php echo getNewsPageURL() ?>" ><span class="more">+</span></a>
 						</div>
 					</div>
 					

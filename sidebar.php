@@ -39,12 +39,13 @@
 	}
 	else if( is_page( getResearchActivityPageNum() ) or is_page( getStudyPageNum() ) or 
 		is_page( getReportPageNum() ) or is_page( getReviewPageNum() ) or 
-		is_page( getColumnPageNum() ) or
+		is_page( getColumnPageNum() ) or is_page( getIssuePageNum() ) or 
 		in_category( array( getResearchActivityCategoryNum(), getStudyCategoryNum(), 
 							getReportCategoryNum(), getReviewCategoryNum(), 
-							getColumnCategoryNum() 
+							getColumnCategoryNum(), getIssueCategoryNum() 
 						) )
 	){
+		
 		if( is_page( getResearchActivityPageNum() ) or is_page( getStudyPageNum() ) or in_category( array( getStudyCategoryNum() ) ) )
 			echo '<aside id="research">';
 		else if( is_page( getReportPageNum() ) or in_category( array( getReportCategoryNum() ) ) )
@@ -53,6 +54,9 @@
 			echo '<aside id="review">';
 		else if( is_page( getColumnPageNum() ) or in_category( array( getColumnCategoryNum() ) ) )
 			echo '<aside id="column">';
+		else if( is_page( getIssuePageNum() ) or in_category( array( getIssueCategoryNum() ) ) )
+			echo '<aside id="issue">';
+		
 ?>
 	<div class="side-title">
 		<span class="side-title-span">연구활동</span><span class="side-sub-title-span">Research Activities</span>
@@ -62,6 +66,7 @@
 		<li><a id="left2_2" href="<?php echo home_url() ?>/researches/report"><span>토지+자유 리포트</span></a></li>
 		<li><a id="left2_3" href="<?php echo home_url() ?>/researches/review"><span>토지+자유 비평</span></a></li>
 		<li><a id="left2_4" href="<?php echo home_url() ?>/researches/column"><span>토지+자유 칼럼</span></a></li>
+		<li><a id="left2_5" href="<?php echo home_url() ?>/researches/korean-issue"><span>한반도 현안 톺아보기</span></a></li>
 	</ul>
 	
 <?php 
