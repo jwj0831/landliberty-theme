@@ -3,13 +3,18 @@
 	<head>
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		
+		<?php if (has_post_thumbnail( $post->ID ) ) { ?>
+		<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
+			<meta property="og:image" content='<?php echo $image[0]; ?>' />
+		<?php } ?>
 		<meta property="og:image" content="<?php bloginfo('template_url'); ?>/images/thumbnail.jpg" />
 				
 		<?php $image = get_post_meta($post->ID, 'facebookimage', true);
 		if ($image) {
 		echo "<link rel=\"image_src\" href=\"" . $image . "\">";
 		} ?>
-				
+		
 		
 			<title><?php
 				/*
@@ -53,7 +58,6 @@
 			alert("hello");
 			$(".board-category-li").children("a").children("span").css('font-weight','normal');
 		});
-
    </script>
 	
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
@@ -113,7 +117,7 @@
 							?>
 						</div>
 						<div id="search">
-							<?php get_search_form( $echo ); ?>
+							<?php get_search_form( ); ?>
 						</div>
 					</div><!--close top-bar-->
 				</header>

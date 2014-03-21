@@ -138,14 +138,14 @@ a img.aligncenter {
 #head-container {
 	width: 100%;
 	position: fixed;
-	z-index: 99;
+	z-index: 10;
 	background-color: #fff;
 	border-bottom: 2px solid #3A8AD4;
 }
 
 header {
 	width: 1000px;
-	height: 14px;
+	height: 35px;
 	margin: 0 auto;
 	margin-top: 12px;
 	font-size: 11px;
@@ -426,7 +426,7 @@ aside li a span {
 	background-image: url('images/bg.gif');
 	background-repeat: repeat;
 	padding-bottom: 10px;
-	padding-top: 126px;
+	padding-top: 150px;
 }
 
 #main_top {
@@ -495,7 +495,7 @@ aside li a span {
 #main_top #column-label {
 	display: inline-block;
 	position: relative;
-	top: -5px;
+	vertical-align: top; 
 }
 
 #main_top .column-title {
@@ -531,6 +531,10 @@ aside li a span {
 	line-height:15px;	
 	color:#ffffff
 
+}
+#more-white-background {
+	color: #4D9AD8;
+	margin-top: 3px;
 }
 
 .smore {
@@ -857,7 +861,7 @@ aside li a span {
 	background-image: url('images/bg.gif');
 	background-repeat: repeat;
 	padding-bottom: 25px;
-	padding-top: 126px;
+	padding-top: 150px;
 }
 
 .subpage_fixed {

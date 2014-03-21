@@ -19,7 +19,7 @@ $news_text_str_num = 110;
 						<div class="title">
 							<img src='<?php bloginfo('template_url'); ?>/images/icon_column.gif' alt='언론기고'>
 							<span id="column-label">언론기고</span>
-							<a href="<?php echo getPressContPageURL() ?>" ><span class="more">+</span></a>
+							<a href="<?php echo getPressContPageURL() ?>" ><span  class="more" id="more-white-background">+</span></a>
 						</div>
 					</div>
 					<div id="column-content">
@@ -308,7 +308,7 @@ $news_text_str_num = 110;
 					<div class="title-box">
 						<div class="title">
 							<h3>공지사항</h3>
-							<a href="<?php echo getNoticePageURL() ?>" ><span class="more">+</span></a>
+							<a href="<?php echo getNoticePageURL() ?>" ><span class="smore">+</span></a>
 						</div>
 					</div>
 					<div class="post-title-list">
@@ -340,7 +340,7 @@ $news_text_str_num = 110;
 					<div class="title-box">
 						<div class="title">
 							<h3>연구소 뉴스</h3>
-							<a href="<?php echo getNewsPageURL() ?>" ><span class="more">+</span></a>
+							<a href="<?php echo getNewsPageURL() ?>" ><span class="smore">+</span></a>
 						</div>
 					</div>
 					
