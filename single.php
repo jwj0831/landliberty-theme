@@ -167,7 +167,7 @@
 									else if( in_category( array( getColumnCategoryNum() ) ) ) { ?>
 										<a href="<?php echo home_url() ?>/researches/column">
 									<?php } 
-									else if( in_category( array( getColumnCategoryNum() ) ) ) { ?>
+									else if( in_category( array( getIssueCategoryNum() ) ) ) { ?>
 										<a href="<?php echo home_url() ?>/researches/korean-issue">
 									<?php } 
 									else if( in_category( array( getStoryCategoryNum() ) ) ) { ?>
