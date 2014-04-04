@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 	<head>
+		<!-- Pulled from http://code.google.com/p/html5shiv/ -->
+		<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		
@@ -38,6 +42,7 @@
 			
 				?>
 			</title>
+			
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
@@ -53,22 +58,41 @@
 	     	$("#smooth_slider_1").css('background-image', 'url("http://landliberty13.cafe24.com/eocjsejr/wp-content/themes/landliberty_v1/images/slide_text_bg.gif")' );
 		 	$("#smooth_slider_1").css('background-repeat', 'none');
 			$("#smooth_slider_1").css('background-position', 'right top');
+				
+			$('#back-to-top').click(function(){
+		    	$('html, body').animate({scrollTop:0}, 'slow');
+			});
+			
+			
+			$("#back-to-top").hide();
+
+			// fade back in targeted element
+			$(function () {
+				$(window).scroll(function () {
+				if ($(this).scrollTop() > 50) {
+					$('#back-to-top').fadeIn();
+				}
+				else {
+					$('#back-to-top').fadeOut();
+				}
+				});
+			});
+			
+			
 		});
 		$("#cat-total").click(function() {
 			alert("hello");
 			$(".board-category-li").children("a").children("span").css('font-weight','normal');
 		});
    </script>
-	
+
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 	<!--<link rel="stylesheet" media="only screen and (max-device-width: 1024px)" href="ipad.css" type="text/css" />-->
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 		
-	<!-- Pulled from http://code.google.com/p/html5shiv/ -->
-	<!--[if lt IE 9]>
-	<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
+	
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
