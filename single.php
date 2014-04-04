@@ -21,7 +21,10 @@
 						<img src='<?php bloginfo('template_url'); ?>/images/sub/icon_home.gif'> 홈 > 연구활동 > <span>토지+자유 비평</span>
 					<?php } 
 					else if( in_category( array( getColumnCategoryNum() ) ) ) { ?>
-						<img src='<?php bloginfo('template_url'); ?>/images/sub/icon_home.gif'> 홈 > 매거진 > <span>칼럼</span>
+						<img src='<?php bloginfo('template_url'); ?>/images/sub/icon_home.gif'> 홈 > 연구활동 > <span>칼럼</span>
+					<?php } 
+					else if( in_category( array( getIssueCategoryNum() ) ) ) { ?>
+						<img src='<?php bloginfo('template_url'); ?>/images/sub/icon_home.gif'> 홈 > 연구활동 > <span>한반도 현안 톺아보기</span>
 					<?php } 
 					else if( in_category( array( getStoryCategoryNum() ) ) ) { ?>
 						<img src='<?php bloginfo('template_url'); ?>/images/sub/icon_home.gif'> 홈 > 매거진 > <span>연구소 이야기</span>
@@ -84,7 +87,10 @@
 						<span class="subpage-title">토지+자유 비평</span><span class="subpage-title-detail">Land and Liberty Review</span>
 					<?php }
 					else if( in_category( array( getColumnCategoryNum() ) ) ) { ?>
-						<span class="subpage-title">칼럼</span><span class="subpage-title-detail"></span>
+						<span class="subpage-title">토지+자유 칼럼</span><span class="subpage-title-detail">Land and Liberty Column</span>
+					<?php }
+					else if( in_category( array( getIssueCategoryNum() ) ) ) { ?>
+						<span class="subpage-title">한반도 현안 톺아보기</span><span class="subpage-title-detail">Analysis of the Korean Peninsula issues</span>
 					<?php } 
 					else if( in_category( array( getStoryCategoryNum() ) ) ) { ?>
 						<span class="subpage-title">토지+자유 이야기</span><span class="subpage-title-detail"></span>
@@ -150,16 +156,19 @@
 										<a href="<?php echo home_url() ?>/landliberty/notice">
 									<?php } 
 									else if( in_category( array( getStudyCategoryNum() ) ) ) { ?>
-										<a href="<?php echo home_url() ?>/research/study">
+										<a href="<?php echo home_url() ?>/researches/study">
 									<?php } 
 									else if( in_category( array( getReportCategoryNum() ) ) ) { ?>
-										<a href="<?php echo home_url() ?>/research/report">
+										<a href="<?php echo home_url() ?>/researches/report">
 									<?php } 
 									else if( in_category( array( getReviewCategoryNum() ) ) ) { ?>
-										<a href="<?php echo home_url() ?>/research/review">
+										<a href="<?php echo home_url() ?>/researches/review">
 									<?php } 
 									else if( in_category( array( getColumnCategoryNum() ) ) ) { ?>
-										<a href="<?php echo home_url() ?>/magazine/column">
+										<a href="<?php echo home_url() ?>/researches/column">
+									<?php } 
+									else if( in_category( array( getColumnCategoryNum() ) ) ) { ?>
+										<a href="<?php echo home_url() ?>/researches/korean-issue">
 									<?php } 
 									else if( in_category( array( getStoryCategoryNum() ) ) ) { ?>
 										<a href="<?php echo home_url() ?>/magazine/story">
