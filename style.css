@@ -319,6 +319,16 @@ header {
 	color: #777777;
 }
 
+#back-to-top-text {
+	display: block;
+	width: 56px;
+	height: 16px;
+	color: #777777;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: center;
+}
+
 /*
  *  Footer Part CSS
  */
