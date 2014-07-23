@@ -37,7 +37,7 @@ get_header(); ?>
 					</div>
 					<div style="float:left;width:400px">
 						<div style="border-bottom:2px #222222 solid;"></div>
-						<div style="border-bottom:1px #dddddd dotted;padding:8px 0;font-size:13px;color:#919191;padding-left:40px">서울시 용산구 원효로 1가 48-10 헨리조지센터</div>
+						<div style="border-bottom:1px #dddddd dotted;padding:8px 0;font-size:13px;color:#919191;padding-left:40px">서울시 서대문구 신촌로 1 59 (창천동 영산빌라) 201</div>
 						<div style="border-bottom:1px #dddddd dotted;padding:8px 0;font-size:13px;color:#919191;padding-left:40px">02) 736-4906</div>
 						<div style="border-bottom:1px #dddddd dotted;padding:8px 0;font-size:13px;color:#919191;padding-left:40px">land-liberty@hanmail.net</div>
 					</div>
@@ -45,7 +45,7 @@ get_header(); ?>
 					<div style="clear:both"></div>
 
 					<div class="map">
-						<iframe width="720" height="550" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=ko&amp;geocode=&amp;q=%EC%84%9C%EC%9A%B8%EC%8B%9C+%EC%9A%A9%EC%82%B0%EA%B5%AC+%EC%9B%90%ED%9A%A8%EB%A1%9C+1%EA%B0%80+48-10&amp;aq=&amp;sll=37.0625,-95.677068&amp;sspn=57.553742,79.013672&amp;ie=UTF8&amp;hq=&amp;hnear=%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD+%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C+%EC%9A%A9%EC%82%B0%EA%B5%AC+%EC%9B%90%ED%9A%A8%EB%A1%9C1%EA%B0%80+48-10&amp;t=m&amp;ll=37.540426,126.967621&amp;spn=0.037295,0.061712&amp;z=14&amp;output=embed"></iframe>
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.7846153174846!2d126.9284722!3d37.56013799999992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c98ebc038ab8f%3A0xa94c9e8e7dc53be7!2z7ISc7Jq47Yq567OE7IucIOyEnOuMgOusuOq1rCDsi6DstIzroZwx6ri4IDU5!5e0!3m2!1sko!2skr!4v1406084695894" width="720" height="550" frameborder="0" style="border:0"></iframe>
 					</div>
 				</div>
 			</div><!--close subpage-->
