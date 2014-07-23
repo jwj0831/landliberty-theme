@@ -25,7 +25,10 @@
 					<?php } 
 					else if( in_category( array( getIssueCategoryNum() ) ) ) { ?>
 						<img src='<?php bloginfo('template_url'); ?>/images/sub/icon_home.gif'> 홈 > 연구활동 > <span>한반도 현안 톺아보기</span>
-					<?php } 
+					<?php }
+					else if( in_category( array( getPressContCategoryNum() ) ) ) { ?>
+						<img src='<?php bloginfo('template_url'); ?>/images/sub/icon_home.gif'> 홈 > 매거진 > <span>언론기고</span>
+					<?php }  
 					else if( in_category( array( getStoryCategoryNum() ) ) ) { ?>
 						<img src='<?php bloginfo('template_url'); ?>/images/sub/icon_home.gif'> 홈 > 매거진 > <span>연구소 이야기</span>
 					<?php } 
@@ -91,7 +94,10 @@
 					<?php }
 					else if( in_category( array( getIssueCategoryNum() ) ) ) { ?>
 						<span class="subpage-title">한반도 현안 톺아보기</span><span class="subpage-title-detail">Analysis of the Korean Peninsula issues</span>
-					<?php } 
+					<?php }
+					else if( in_category( array( getPressContCategoryNum() ) ) ) { ?>
+						<span class="subpage-title">언론기고</span><span class="subpage-title-detail"></span>
+					<?php }  
 					else if( in_category( array( getStoryCategoryNum() ) ) ) { ?>
 						<span class="subpage-title">토지+자유 이야기</span><span class="subpage-title-detail"></span>
 					<?php } 
@@ -169,7 +175,10 @@
 									<?php } 
 									else if( in_category( array( getIssueCategoryNum() ) ) ) { ?>
 										<a href="<?php echo home_url() ?>/researches/korean-issue">
-									<?php } 
+									<?php }
+									else if( in_category( array( getPressContCategoryNum() ) ) ) { ?>
+										<a href="<?php echo home_url() ?>/magazine/press">
+									<?php }  
 									else if( in_category( array( getStoryCategoryNum() ) ) ) { ?>
 										<a href="<?php echo home_url() ?>/magazine/story">
 									<?php } 

@@ -551,8 +551,19 @@ aside li a span {
 	font-weight: bold;
 	line-height:15px;	
 	color:#ffffff
-
 }
+
+.more-grey {
+	display: inline-block;
+	margin-right: 25px;
+	float: right;
+	font-size: 25px;
+	font-weight: bold;
+	line-height:15px;	
+	color:#8c8c8c
+}
+
+
 #more-white-background {
 	color: #4D9AD8;
 	margin-top: 3px;

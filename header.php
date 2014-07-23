@@ -7,7 +7,7 @@
 		<![endif]-->
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		
+		<link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/images/favicon.ico" />
 		<?php if (has_post_thumbnail( $post->ID ) ) { ?>
 		<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
 			<meta property="og:image" content='<?php echo $image[0]; ?>' />
